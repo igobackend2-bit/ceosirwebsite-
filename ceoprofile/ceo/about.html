@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- metas -->
+    <meta charset="utf-8">
+    <meta name="author" content="Website Design Templates">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Digital Marketing & SEO Agency HTML Template">
+    <meta name="description" content="Webrik - Digital Marketing & SEO Agency HTML Template">
+
+    <!-- title  -->
+    <title>Ceo Dr.John Yesudhas</title>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="img/logos/favicon.jpg">
+    <link rel="apple-touch-icon" href="img/logos/apple-touch-icon-57x57.jpg">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/logos/apple-touch-icon-72x72.jpg">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/logos/apple-touch-icon-114x114.jp">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- plugins -->
+    <link rel="stylesheet" href="css/plugins.css">
+
+    <!-- search css -->
+    <link rel="stylesheet" href="search/search.css">
+
+    <!-- quform css -->
+    <link rel="stylesheet" href="quform/css/base.css">
+
+    <!-- theme core css -->
+    <link href="css/styles.css" rel="stylesheet">
+
+    <!-- custom css -->
+    <link href="css/custom.css" rel="stylesheet">
+    <style>
+        /* WhatsApp Button */
+        .chat-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 28px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+
+        .chat-btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* Popup */
+        .chat-popup {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 320px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            flex-direction: column;
+            overflow: hidden;
+            z-index: 10000;
+
+            /* Animation Defaults */
+            opacity: 0;
+            transform: translateY(30px);
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+
+        .chat-popup.active {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        /* Header */
+        .chat-header {
+            background: #25d366;
+            color: #fff;
+            padding: 12px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-header h4 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .chat-header button {
+            background: transparent;
+            border: none;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Body */
+        .chat-body {
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .chat-body input,
+        .chat-body textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+        .chat-body button {
+            background-color: #25d366;
+            border: none;
+            color: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .chat-body button:hover {
+            background-color: #1ebe57;
+        }
+
+        /* 🔹 Mobile Responsive */
+        @media (max-width: 600px) {
+            .chat-popup {
+                width: 100%;
+                height: 60%;
+                right: 0;
+                bottom: 0;
+                border-radius: 20px 20px 0 0;
+                transform: translateY(100%);
+            }
+
+            .chat-popup.active {
+                transform: translateY(0);
+            }
+
+            .chat-btn {
+                bottom: 15px;
+                right: 15px;
+                width: 55px;
+                height: 55px;
+                font-size: 26px;
+            }
+        }
+
+        .brand-section {
+            background: #fff;
+            padding: 20px 0;
+            overflow: hidden;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+
+        .brand-scroll {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .brand-track {
+            display: flex;
+            align-items: center;
+            width: max-content;
+            gap: 60px;
+            /* space between logos */
+            animation: scrollLoop 30s linear infinite;
+            will-change: transform;
+            /* improves performance */
+        }
+
+        .brand-track img {
+            height: 70px;
+            /* medium size */
+            width: auto;
+            object-fit: contain;
+            filter: grayscale(0%);
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        /* Optional hover zoom */
+        .brand-track img:hover {
+            transform: scale(1.1);
+            filter: grayscale(0%);
+        }
+
+        /* Loop scrolling animation */
+        @keyframes scrollLoop {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* Optional: pause when hover */
+        .brand-section:hover .brand-track {
+            animation-play-state: paused;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .brand-track {
+                gap: 40px;
+                animation-duration: 45s;
+                /* slower scroll for mobile */
+            }
+
+            .brand-track img {
+                height: 50px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- PAGE LOADING
+    ================================================== -->
+    <div id="preloader"></div>
+
+    <!-- MAIN WRAPPER
+    ================================================== -->
+    <div class="main-wrapper">
+
+        <!-- HEADER
+        ================================================== -->
+        <header class="header-style1 menu_area-light">
+
+            <div class="navbar-default border-bottom border-color-light-white">
+
+                <!-- start top search -->
+                <div class="top-search bg-primary">
+                    <div class="container-fluid px-lg-1-6 px-xl-2-5 px-xxl-2-9">
+                        <form class="search-form" action="search.html" method="GET" accept-charset="utf-8">
+                            <div class="input-group">
+                                <span class="input-group-addon cursor-pointer">
+                                    <button class="search-form_submit fas fa-search text-white" type="submit"></button>
+                                </span>
+                                <input type="text" class="search-form_input form-control" name="s" autocomplete="off"
+                                    placeholder="Type & hit enter...">
+                                <span class="input-group-addon close-search mt-1"><i class="fas fa-times"></i></span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- end top search -->
+
+                <div class="container-fluid px-lg-1-6 px-xl-2-5 px-xxl-2-9">
+                    <div class="row align-items-center">
+                        <div class="col-12 col-lg-12">
+                            <div class="menu_area alt-font">
+                                <nav class="navbar navbar-expand-lg navbar-light p-0">
+                                    <div class="navbar-header navbar-header-custom">
+                                        <!-- start logo -->
+                                        <a href="index.html" class="navbar-brand">
+                                            <img id="logo" src="img/logos/logo-inner.png" alt="logo"></a>
+                                        <!-- end logo -->
+                                    </div>
+
+                                    <div class="navbar-toggler bg-primary"></div>
+
+                                    <!-- start menu area -->
+                                    <ul class="navbar-nav ms-auto" id="nav" style="display: none;">
+                                        <li>
+                                            <a href="index.html">Home</a>
+                                            <!-- <ul>
+                                                <li><a href="index.html">Home 01</a></li>
+                                                <li><a href="index-02.html">Home 02</a></li>
+                                                <li><a href="index-03.html">Home 03 - Dark Menu</a></li>
+                                            </ul> -->
+                                        </li>
+                                        <li>
+                                            <a href="about.html">About</a>
+                                            <ul>
+                                                <!-- <li><a href="services.html">Our Services</a></li> -->
+                                                <li><a href="history.html">Our History</a></li>
+                                                <!-- <li><a href="pricing.html">Pricing Plan</a></li> -->
+                                                <li><a href="faq.html">FAQ's</a></li>
+                                                <li><a href="awards.html">Awards</a></li>
+                                                <li><a href="techfarming-innovation.html">Innovation</a></li>
+                                                <!-- <li>
+                                                    <a href="#">Others</a>
+                                                    <ul>
+                                                        <li><a href="404-page.html">404 Page</a></li>
+                                                         <li><a href="coming-soon.html">Coming Soon</a></li> -->
+                                                <!-- <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                                                        <li><a href="terms-conditions.html">Terms & Conditions</a></li>
+                                                    </ul>
+                                                </li>  -->
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">Services</a>
+                                            <ul>
+                                                <li><a href="Empowering Farming.html">Empowering Farming Futures</a>
+                                                </li>
+                                                <li><a href="Innovation.html">Innovation Support</a></li>
+                                                <li><a href="mentorship.html">Mentorship</a></li>
+                                                <!-- <li><a href="brand-strategy.html">Brand Strategy</a></li>
+                                                <li><a href="website-development.html">Website Development</a></li>
+                                                <li><a href="seo-optimization.html">SEO Optimization</a></li> -->
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="project.html">Project</a>
+                                            <!-- <ul>
+                                                <li>
+                                                    <a href="#">Project</a>
+                                                    <ul>
+                                                        <!-- <li><a href="portfolio-two-columns.html">2 Columns</a></li>
+                                                        <li><a href="portfolio.html">3 Columns - Standard</a></li> -->
+                                            <!-- <li><a href="portfolio-four-columns.html">4 Columns</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li><a href="portfolio-details.html">Portfolio Details</a></li>
+                                            </ul> -->
+                                        </li>
+                                        <li>
+                                            <a href="blog.html">Blog</a>
+                                            <!-- <ul>
+                                                <li>
+                                                    <a href="#">Blog Grid</a>
+                                                    <ul>
+                                                        <li><a href="blog-grid-two-columns.html">2 Columns</a></li>
+                                                        <li><a href="blog-grid-two-columns-left-sidebar.html">2 Col –
+                                                                Left Sidebar</a></li>
+                                                        <li><a href="blog-grid-two-columns-right-sidebar.html">2 Col –
+                                                                Right Sidebar</a></li>
+                                                        <li><a href="blog-grid.html">3 Columns - Standard</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li><a href="blog-list.html">Blog List</a></li>
+                                                <li><a href="blog-details.html">Blog Details</a></li>
+                                            </ul> -->
+                                        </li>
+                                        <li><a href="contact.html">Contact</a></li>
+                                    </ul>
+                                    <!-- end menu area -->
+
+                                    <!-- start attribute navigation -->
+                                    <div class="attr-nav align-items-xl-center ms-xl-auto main-font">
+                                        <ul>
+                                            <!-- <li class="search"><a href="#"><i class="fas fa-search"></i></a></li> -->
+                                            <li class="d-none d-xl-inline-block"><a href="contact.html"
+                                                    class="btn-style01 md text-white"><span class="btn-text">Free
+                                                        Quote</span></a></li>
+                                        </ul>
+                                    </div>
+                                    <!-- end attribute navigation -->
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- PAGE TITLE
+        ================================================== -->
+        <section class="page-title-section bg-img cover-background top-position1 left-overlay-secondary"
+            data-overlay-dark="8" data-background="img/banner/page-title.jpg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>About <span class="font-weight-800 text-primary">us</span></h1>
+                        <ul class="list-unstyled">
+                            <li><a href="index.html">Home</a></li>
+                            <li>About Us</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="line-animated">
+                <span class="animated">&nbsp;</span>
+                <span class="animated">&nbsp;</span>
+                <span class="animated">&nbsp;</span>
+                <span class="animated">&nbsp;</span>
+                <span class="animated">&nbsp;</span>
+            </div>
+        </section>
+
+        <!-- ABOUT
+        ================================================== -->
+        <section>
+            <div class="container-fluid px-lg-8 px-xl-20 px-xxl-24">
+                <div class="row mt-n1-9 justify-content-center">
+                    <div class="col-6 col-lg-3 order-1 mt-1-9">
+                        <div class="image-hover mt-lg-15 text-end wow fadeInUp" data-wow-delay="200ms">
+                            <img src="img/content/about-08.jpg" alt="..." class="border-radius-10">
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-lg-6 order-3 order-lg-2 mt-1-9">
+                        <div class="text-center px-xl-2 px-xxl-2-9">
+                            <div class="section-title01 text-center center mb-1-9 mb-xxl-2-9 wow fadeInUp"
+                                data-wow-delay="300ms">
+                                <span class="text-secondary sub-title">About Us</span>
+                                <h2 class="display-5 font-weight-600 lh-1 pb-3 mb-0 ls-minus-2px">“Beyond Leadership,
+                                    <span class="text-primary font-weight-800">Into Transformation </span>– Dr. John
+                                    Yesudhas”
+                                </h2>
+                            </div>
+                            <p class="display-26 display-md-25 display-lg-24 display-xxl-22 lh-base mb-1-9 mb-lg-2-9 mb-xl-6 mb-xxl-10 wow fadeInUp"
+                                data-wow-delay="400ms">Dr. John Yesudhas, CEO and Founder of IGO Agritech Farms, is a
+                                Tech Farming Expert and innovative leader in India’s agritech sector. He is known for
+                                merging technology with sustainable farming, shaping modern agriculture while mentoring
+                                the next generation of agripreneurs.
+
+                            </p>
+                            <div class="d-flex align-items-center justify-content-center border rounded-pill py-2 py-xl-3 wow fadeInUp"
+                                data-wow-delay="500ms">
+                                <div class="display-3 text-secondary pe-4 font-weight-400">
+                                    <div class="odometer" data-count="10">1</div>+
+                                </div>
+                                <div
+                                    class="font-weight-700 text-secondary display-26 display-xl-25 display-xxl-23 lh-1">
+                                    Years of <br> <span class="d-block font-weight-400">Pro Experiences</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3 order-2 order-lg-3 mt-1-9">
+                        <div class="text-start image-hover text-lg-end wow fadeInUp" data-wow-delay="600ms">
+                            <img src="img/content/about-09.jpg" alt="..." class="border-radius-10">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COUNTER
+        ================================================== -->
+        <section class="bg-secondary counter-style01 py-9">
+            <div class="container-fluid px-lg-8 px-xxl-20">
+                <div class="row mt-n1-9">
+                    <div class="col-sm-6 col-xl-3 mt-1-9 wow fadeInUp" data-wow-delay="200ms">
+                        <div class="counter-bg">
+                            <div class="flex-shrink-0">
+                                <div class="text-primary lh-1 font-weight-500 d-inline-block display-3">
+                                    <div class="odometer font-weight-600" data-count="1">1</div>K
+                                </div>
+                            </div>
+                            <div class="flex-grow-1">
+                                <div class="counter-title">
+                                    <span class="text-white">Projects Completed</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-3 mt-1-9 wow fadeInUp" data-wow-delay="300ms">
+                        <div class="counter-bg">
+                            <div class="flex-shrink-0">
+                                <div class="text-primary lh-1 font-weight-500 d-inline-block display-3">
+                                    <div class="odometer font-weight-600" data-count="1">1</div>K
+                                </div>
+                            </div>
+                            <div class="flex-grow-1">
+                                <div class="counter-title">
+                                    <span class="text-white">Customers</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-3 mt-1-9 wow fadeInUp" data-wow-delay="400ms">
+                        <div class="counter-bg">
+                            <div class="flex-shrink-0">
+                                <div class="text-primary lh-1 font-weight-500 d-inline-block display-3">
+                                    <div class="odometer font-weight-600" data-count="500">1</div>
+                                </div>
+                            </div>
+                            <div class="flex-grow-1">
+                                <div class="counter-title">
+                                    <span class="text-white">Dedicated Staff</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-3 mt-1-9 wow fadeInUp" data-wow-delay="500ms">
+                        <div class="counter-bg">
+                            <div class="flex-shrink-0">
+                                <div class="text-primary lh-1 font-weight-500 d-inline-block display-3">
+                                    <div class="odometer font-weight-600" data-count="15">1</div>
+                                </div>
+                            </div>
+                            <div class="flex-grow-1">
+                                <div class="counter-title">
+                                    <span class="text-white">Honorable Awards Received</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROCESS
+        ================================================== -->
+        <section>
+            <div class="container">
+                <div class="row mt-n1-9">
+                    <div class="col-lg-6 mt-1-9 order-2 order-lg-1">
+                        <div class="pe-xl-6">
+                            <div class="section-title01 mb-1-9 mb-xl-2-9">
+                                <span class="text-secondary sub-title">My Story</span>
+                                <h2 class="display-5 font-weight-600 lh-1 pb-3 mb-0 ls-minus-2px">From a Single Idea to
+                                    a <span class="text-primary font-weight-800">Farming Revolution </span>My Journey
+                                </h2>
+                            </div>
+                            <p class="mb-0 mb-xl-3 wow fadeInUp" data-wow-delay="200ms">Dr. John Yesudhas, CEO of IGO
+                                Group, is a visionary leader in tech-driven farming with over a decade of expertise. He
+                                pioneers precision agriculture and polyhouse cultivation, turning unused land into
+                                profitable farms. A TEDx speaker and author, he inspires entrepreneurs while positioning
+                                IGO Group as a leader in the agri-tech sector.</p>
+                            <div>
+                                <div id="accordion" class="accordion-style style01">
+                                    <div class="card wow fadeInUp" data-wow-delay="200ms">
+                                        <div class="card-header" id="headingOne">
+                                            <h5 class="mb-0">
+                                                <button class="btn btn-link" data-bs-toggle="collapse"
+                                                    data-bs-target="#collapseOne" aria-expanded="true"
+                                                    aria-controls="collapseOne"><span
+                                                        class="text-primary display-26 display-lg-22 display-xl-20">1.</span>Biography</button>
+                                            </h5>
+                                        </div>
+                                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                            data-bs-parent="#accordion">
+                                            <div class="card-body">
+                                                Dr. John Yesudhas, visionary CEO and founder of IGO Agritech Farms,
+                                                pioneers tech-driven and sustainable farming innovations. With an
+                                                engineering background, he revolutionized agriculture through precision
+                                                farming, polyhouse cultivation, and hydroponics to boost yield and
+                                                efficiency. Leading a team of agri-engineers and agronomists, he
+                                                transforms unused land into profitable ventures. As a mentor and
+                                                speaker, he inspires future agri-entrepreneurs and drives global impact
+                                                in modern agriculture. </div>
+                                        </div>
+                                    </div>
+                                    <div class="card wow fadeInUp" data-wow-delay="300ms">
+                                        <div class="card-header" id="headingTwo">
+                                            <h5 class="mb-0">
+                                                <button class="btn btn-link collapsed" data-bs-toggle="collapse"
+                                                    data-bs-target="#collapseTwo" aria-expanded="false"
+                                                    aria-controls="collapseTwo"><span
+                                                        class="text-primary display-26 display-lg-22 display-xl-20">2.</span>
+                                                    Mission</button>
+                                            </h5>
+                                        </div>
+                                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                            data-bs-parent="#accordion">
+                                            <div class="card-body">
+                                                To empower landowners and entrepreneurs by providing innovative,
+                                                technology-driven farming solutions that maximize land use efficiency
+                                                and profitability, while promoting sustainable and eco-friendly
+                                                agricultural practices for a better future. Through education,
+                                                motivation, and hands-on support, he aims to build successful
+                                                agri-business ecosystems that inspire growth and transform communities.
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card wow fadeInUp" data-wow-delay="400ms">
+                                        <div class="card-header" id="headingThree">
+                                            <h5 class="mb-0">
+                                                <button class="btn btn-link collapsed" data-bs-toggle="collapse"
+                                                    data-bs-target="#collapseThree" aria-expanded="false"
+                                                    aria-controls="collapseThree"><span
+                                                        class="text-primary display-26 display-lg-22 display-xl-20">3.</span>
+                                                    Vision</button>
+                                            </h5>
+                                        </div>
+                                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                            data-bs-parent="#accordion">
+                                            <div class="card-body">
+                                                Dr. John Yesudhas, CEO of IGO Group, is a renowned tech farming expert
+                                                and author specialized in precision agriculture. With over a decade of
+                                                experience, he pioneers innovative farming techniques across all
+                                                agricultural projects. Dr. John Yesudhas is dedicated to transforming
+                                                traditional agriculture into a profitable, sustainable, and
+                                                technology-driven industry that empowers farmers and nurtures future
+                                                agritech leaders
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mt-1-9 order-1 order-lg-2">
+                        <div class="image-hover wow fadeInUp" data-wow-delay="600ms">
+                            <img src="img/content/why-choose-02.jpg" alt="..." class="border-radius-10">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TEAM
+        ================================================== -->
+        <section class="bg-light">
+            <div class="container">
+                <div class="section-title01 text-center center mb-1-9 mb-xl-2-9">
+                    <span class="text-secondary sub-title">Awards</span>
+                    <h2 class="display-5 font-weight-600 lh-1 pb-3 mb-0 ls-minus-2px w-md-75 w-lg-65 w-xl-50 mx-auto">
+                        A Journey <span class="text-primary font-weight-800"> Marked by Prestigious </span>Awards</h2>
+                </div>
+                <div class="row mt-n1-6">
+                    <div class="col-md-6 col-lg-4 mt-1-6 wow fadeInUp" data-wow-delay="100ms">
+                        <div class="card card-style04">
+                            <div class="team-img">
+                                <img src="img/awards/award-jpg.jpeg" alt="MSME Award" class="border-radius-10">
+                                <div class="card-body">
+                                    <span class="text-white opacity6">MSME AWARDS</span>
+                                </div>
+                            </div>
+                            <ul class="mb-0 list-unstyled team-social">
+                                <li><a href="#" class="text-white text-primary-hover"><i
+                                            class="fa-brands fa-facebook-f"></i></a></li>
+                                <li><a href="#" class="text-white text-primary-hover"><i
+                                            class="fa-brands fa-x-twitter"></i></a></li>
+                                <li><a href="#" class="text-white text-primary-hover"><i
+                                            class="fab fa-linkedin-in"></i></a></li>
+                                <li><a href="#" class="text-white text-primary-hover"><i class="ti-instagram"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mt-1-6 wow fadeInUp" data-wow-delay="200ms">
+                        <div class="card card-style04">
+                            <div class="team-img">
+                                <img src="img/awards/best-farm-engineering-company-i-india-2025.jpeg" alt="Best Farm Engineering Company in India 2025" class="border-radius-10">
+                                <div class="card-body">
+                                    <span class="text-white opacity6">INDIAS LEADING FARM ENGINEEERING BRAND
+                                    </span>
+                                </div>
+                            </div>
+                            <ul class="mb-0 list-unstyled team-social">
+                                <li><a href="#" class="text-white text-primary-hover"><i
+                                            class="fa-brands fa-facebook-f"></i></a></li>
+                                <li><a href="#" class="text-white text-primary-hover"><i
+                                            class="fa-brands fa-x-twitter"></i></a></li>
+                                <li><a href="#" class="text-white text-primary-hover"><i
+                                            class="fab fa-linkedin-in"></i></a></li>
+                                <li><a href="#" class="text-white text-primary-hover"><i class="ti-instagram"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mt-1-6 wow fadeInUp" data-wow-delay="300ms">
+                        <div class="card card-style04">
+                            <div class="team-img">
+                                <img src="img/awards/award1-jpg.jpeg" alt="SISI Award" class="border-radius-10">
+                                <div class="card-body">
+                                    <span class="text-white opacity6">SISI AWARDS
+                                    </span>
+                                </div>
+                            </div>
+                            <ul class="mb-0 list-unstyled team-social">
+                                <li><a href="#" class="text-white text-primary-hover"><i
+                                            class="fa-brands fa-facebook-f"></i></a></li>
+                                <li><a href="#" class="text-white text-primary-hover"><i
+                                            class="fa-brands fa-x-twitter"></i></a></li>
+                                <li><a href="#" class="text-white text-primary-hover"><i
+                                            class="fab fa-linkedin-in"></i></a></li>
+                                <li><a href="#" class="text-white text-primary-hover"><i class="ti-instagram"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- TESTIMONIAL
+        ================================================== -->
+        <section>
+            <div class="container">
+                <div class="section-title01 text-center center mb-1-9 mb-xl-2-9">
+                    <span class="text-secondary sub-title">Testimonial</span>
+                    <h2 class="display-5 font-weight-600 lh-1 pb-3 mb-0 ls-minus-2px w-md-75 w-lg-65 w-xl-50 mx-auto">
+                        Customer feedback <span class="text-primary font-weight-800">& success </span>stories
+                    </h2>
+                </div>
+
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-10 col-xl-7">
+                        <div class="testmonial-carousel-one owl-carousel w-100" data-owl='{
+                      "loop": true,
+                      "autoplay": true,
+                      "autoplayTimeout": 3000,
+                      "responsiveClass": true,
+                      "smartSpeed": 900,
+                      "dots": false,
+                      "nav": true,
+                      "navText": [
+                        "<i class=\"fa-solid fa-angle-left\"></i>",
+                        "<i class=\"fa-solid fa-angle-right\"></i>"
+                      ],
+                      "margin": 30,
+                      "responsive": { "0": { "items": 1 }, "768": { "items": 1 } }
+                    }'>
+
+                            <div>
+                                <div class="img">
+                                    <img src="img/avatars/avatar-01.jpg" alt="..." class="rounded-circle">
+                                </div>
+                                <p class="display-25 display-sm-23 display-lg-18 lh-sm mb-4">
+                                    Dr. John Yesudhas visited our college and inspired all of us agri students.
+                                    His speech was motivating, informative, and full of practical insights for our
+                                    future in agriculture
+                                </p>
+                                <img src="img/icons/quote-right.png" alt="..." class="mb-4">
+                                <p>Karthick</p>
+                            </div>
+
+                            <div>
+                                <div class="img">
+                                    <img src="img/avatars/avatar-02.jpg" alt="..." class="rounded-circle">
+                                </div>
+                                <p class="display-25 display-sm-23 display-lg-18 lh-sm mb-4">
+                                    Attending Dr. John Yesudhas’ speech was truly inspiring. His insights on
+                                    agriculture,
+                                    innovation, and technology were clear, informative, and easy to understand.
+                                </p>
+                                <img src="img/icons/quote-right.png" alt="..." class="mb-4">
+                                <p>Sathish</p>
+                            </div>
+
+                            <div>
+                                <div class="img">
+                                    <img src="img/avatars/avatar-03.jpg" alt="..." class="rounded-circle">
+                                </div>
+                                <p class="display-25 display-sm-23 display-lg-18 lh-sm mb-4">
+                                    Dr. John Yesudhas is a true role model for every young professional. His leadership,
+                                    vision,
+                                    and guidance inspire us to grow and excel in our careers.
+                                </p>
+                                <img src="img/icons/quote-right.png" alt="..." class="mb-4">
+                                <p>Logesh</p>
+                            </div>
+
+                            <div>
+                                <div class="img">
+                                    <img src="img/avatars/avatar-04.jpg" alt="..." class="rounded-circle">
+                                </div>
+                                <p class="display-25 display-sm-23 display-lg-18 lh-sm mb-4">
+                                    Our experience with IGO Group has been exceptional. Dr. John Yesudhas and his team
+                                    made the project seamless,
+                                    providing full support and expert guidance. Highly satisfied with the results!
+                                </p>
+                                <img src="img/icons/quote-right.png" alt="..." class="mb-4">
+                                <p>Akil</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="brand-section">
+            <div class="brand-scroll">
+                <div class="brand-track">
+                    <!-- One full set -->
+                    <img src="img/brand/brand-1.jpg" alt="Brand 1" />
+                    <img src="img/brand/brand-2.jpg" alt="Brand 2" />
+                    <img src="img/brand/brand-3.jpg" alt="Brand 3" />
+                    <img src="img/brand/brand-4.jpg" alt="Brand 4" />
+                    <img src="img/brand/brand-5.jpg" alt="Brand 5" />
+                    <img src="img/brand/brand-6.jpg" alt="Brand 6" />
+
+                    <!-- Duplicate set (for seamless looping) -->
+                    <img src="img/brand/brand-1.jpg" alt="Brand 1" />
+                    <img src="img/brand/brand-2.jpg" alt="Brand 2" />
+                    <img src="img/brand/brand-3.jpg" alt="Brand 3" />
+                    <img src="img/brand/brand-4.jpg" alt="Brand 4" />
+                    <img src="img/brand/brand-5.jpg" alt="Brand 5" />
+                    <img src="img/brand/brand-6.jpg" alt="Brand 6" />
+                </div>
+            </div>
+        </section>
+
+        <!-- WhatsApp Chat Button -->
+        <button class="chat-btn" id="chatBtn">
+            <i class="fa-brands fa-whatsapp"></i>
+        </button>
+
+        <!-- Popup Form -->
+        <div class="chat-popup" id="chatPopup">
+            <div class="chat-header">
+                <h4>Chat with Us</h4>
+                <button id="closeChat">&times;</button>
+            </div>
+            <div class="chat-body">
+                <input type="text" id="userName" placeholder="Your Name" required>
+                <textarea id="userMessage" rows="3" placeholder="Type your message..." required></textarea>
+                <button id="sendMsg">Send on WhatsApp</button>
+            </div>
+        </div>
+        <script>
+            const chatBtn = document.getElementById('chatBtn');
+            const chatPopup = document.getElementById('chatPopup');
+            const closeChat = document.getElementById('closeChat');
+            const sendMsg = document.getElementById('sendMsg');
+
+            // Toggle Popup
+            chatBtn.addEventListener('click', () => {
+                chatPopup.classList.toggle('active');
+            });
+
+            closeChat.addEventListener('click', () => {
+                chatPopup.classList.remove('active');
+            });
+
+            // Send WhatsApp Message
+            sendMsg.addEventListener('click', (e) => {
+                e.preventDefault();
+                const name = document.getElementById('userName').value.trim();
+                const message = document.getElementById('userMessage').value.trim();
+
+                if (!name || !message) {
+                    alert('Please enter your name and message');
+                    return;
+                }
+
+                const phoneNumber = "7397386189";
+                const text = `Hello, I'm ${name}. ${message}`;
+                const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
+
+                window.open(whatsappURL, '_blank');
+            });
+
+        </script>
+
+
+        <!-- FOOTER
+        ================================================== -->
+        <footer class="bg-secondary pt-2-9 pt-md-6 pt-xl-8">
+            <div class="container">
+                <div class="row mb-2-9 mb-md-6 mb-xl-8">
+                    <div class="col-md-8 col-xl-6">
+                        <h2 class="mb-0 display-6 font-weight-600 text-white ls-minus-2px">“A Leader Committed to
+                            Excellence <span class="font-weight-800 text-primary"> in Agriculture”</span></h2>
+                    </div>
+                </div>
+                <div class="row border-bottom border-color-light-white pb-2-9 pb-md-6 pb-xl-8 mt-n2-9">
+                    <div class="col-sm-6 col-xl-3 mt-2-9">
+                        <h3 class="font-weight-600 text-primary h5 mb-1-6 mb-md-1-9">Address</h3>
+                        <address class="mb-0 display-29 display-md-28 text-white opacity7">No 17 ,
+                            Kovalan street,
+                            <br>2nd main road,
+                            <br> Uthandi kanathur, Chennai 600119.
+                        </address>
+                    </div>
+                    <div class="col-sm-6 col-xl-3 mt-2-9">
+                        <div class="ps-sm-2-6 ps-xxl-5">
+                            <h3 class="font-weight-600 text-primary h5 mb-1-6 mb-md-1-9">Say hello</h3>
+                            <p class="email"><a href="mailto:info@yourdomain.com"
+                                    class="display-29 display-md-28">ceojohnyesudas@gmail.com
+                                </a></p>
+                            <p class="phone"><a href="tel:+442056581823"
+                                    class="display-26 display-md-25 display-xl-24">+91 7397386189</a></p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-3 mt-2-9">
+                        <div class="ps-xl-8 ps-xl-12">
+                            <h3 class="font-weight-600 text-primary h5 mb-1-6 mb-md-1-9">Social</h3>
+                            <ul class="footer-list mb-0 ps-0">
+                                <li>
+                                    <a href="https://www.facebook.com/johnyesudhass/">Facebook</a>
+                                </li>
+                                <li>
+                                    <a href="#">Twitter</a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://www.linkedin.com/in/drjohnyesudhas?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">Linkedin</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-3 mt-2-9">
+                        <div class="ps-sm-2-6 ps-xl-0">
+                            <h3 class="font-weight-600 text-primary h5 mb-1-6 mb-md-1-9">Newsletter</h3>
+                            <p class="text-white w-95">Subscribe for New Update.</p>
+                            <form class="quform newsletter-form" action="quform/newsletter-two.php" method="post"
+                                enctype="multipart/form-data" onclick="">
+
+                                <div class="quform-elements">
+                                    <div class="row">
+
+                                        <!-- Begin Text input element -->
+                                        <div class="col-md-12">
+                                            <div class="quform-element mb-0">
+                                                <div class="quform-input">
+                                                    <input class="form-control" id="email_address" type="text"
+                                                        name="email_address" placeholder="Subscribe with us">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- End Text input element -->
+
+                                        <!-- Begin Submit button -->
+                                        <div class="col-md-12">
+                                            <div class="quform-submit-inner">
+                                                <button class="btn btn-white text-white m-0" type="submit"><i
+                                                        class="fas fa-paper-plane"></i></button>
+                                            </div>
+                                            <div class="quform-loading-wrap"><span class="quform-loading"></span></div>
+                                        </div>
+                                        <!-- End Submit button -->
+                                    </div>
+
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="row py-4">
+                    <div class="col-lg-12">
+                        <p class="mb-0 text-white">&copy; <span class="current-year">&nbsp;</span>
+                            <a href="#" class="text-primary text-white-hover">All Rights by IGO Group</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- all js include start -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.min.js"></script>
+
+    <!-- popper js -->
+    <script src="js/popper.min.js"></script>
+
+    <!-- bootstrap -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- search -->
+    <script src="search/search.js"></script>
+
+    <!-- navigation -->
+    <script src="js/nav-menu.js"></script>
+
+    <!-- owl carousel -->
+    <script src="js/owl.carousel.js"></script>
+
+    <!-- jarallax -->
+    <script src="js/jarallax.min.js"></script>
+
+    <!-- jarallax video -->
+    <script src="js/jarallax-video.js"></script>
+
+    <!-- stellar js -->
+    <script src="js/jquery.stellar.min.js"></script>
+
+    <!-- waypoints js -->
+    <script src="js/waypoints.min.js"></script>
+
+    <!-- odometer js -->
+    <script src="js/odometer.min.js"></script>
+
+    <!-- countdown js -->
+    <script src="js/countdown.js"></script>
+
+    <!-- jquery.magnific-popup js -->
+    <script src="js/jquery.magnific-popup.min.js"></script>
+
+    <!-- lightgallery js -->
+    <script src="js/lightgallery-all.js"></script>
+
+    <!-- mousewheel js -->
+    <script src="js/jquery.mousewheel.min.js"></script>
+
+    <!-- wow js -->
+    <script src="js/wow.js"></script>
+
+    <!-- smoothscroll js -->
+    <script src="js/smoothscroll.js"></script>
+
+    <!-- custom scripts -->
+    <script src="js/main.js"></script>
+
+    <!-- form plugins js -->
+    <script src="quform/js/plugins.js"></script>
+
+    <!-- form scripts js -->
+    <script src="quform/js/scripts.js"></script>
+
+    <!-- all js include end -->
+
+</body>
+
+</html>

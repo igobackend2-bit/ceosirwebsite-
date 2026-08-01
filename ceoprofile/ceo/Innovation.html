@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- metas -->
+    <meta charset="utf-8">
+    <meta name="author" content="Website Design Templates">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Digital Marketing & SEO Agency HTML Template">
+    <meta name="description" content="Webrik - Digital Marketing & SEO Agency HTML Template">
+
+    <!-- title  -->
+    <title>Ceo Dr.John Yesudhas</title>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="img/logos/favicon.jpg">
+    <link rel="apple-touch-icon" href="img/logos/apple-touch-icon-57x57.jpg">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/logos/apple-touch-icon-72x72.jpg">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/logos/apple-touch-icon-114x114.jp">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- plugins -->
+    <link rel="stylesheet" href="css/plugins.css">
+
+    <!-- search css -->
+    <link rel="stylesheet" href="search/search.css">
+
+    <!-- quform css -->
+    <link rel="stylesheet" href="quform/css/base.css">
+
+    <!-- theme core css -->
+    <link href="css/styles.css" rel="stylesheet">
+
+    <!-- custom css -->
+    <link href="css/custom.css" rel="stylesheet">
+
+    <style>
+        /* WhatsApp Button */
+        .chat-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 28px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+
+        .chat-btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* Popup */
+        .chat-popup {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 320px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            flex-direction: column;
+            overflow: hidden;
+            z-index: 10000;
+
+            /* Animation Defaults */
+            opacity: 0;
+            transform: translateY(30px);
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+
+        .chat-popup.active {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        /* Header */
+        .chat-header {
+            background: #25d366;
+            color: #fff;
+            padding: 12px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-header h4 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .chat-header button {
+            background: transparent;
+            border: none;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Body */
+        .chat-body {
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .chat-body input,
+        .chat-body textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+        .chat-body button {
+            background-color: #25d366;
+            border: none;
+            color: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .chat-body button:hover {
+            background-color: #1ebe57;
+        }
+
+        /* 🔹 Mobile Responsive */
+        @media (max-width: 600px) {
+            .chat-popup {
+                width: 100%;
+                height: 60%;
+                right: 0;
+                bottom: 0;
+                border-radius: 20px 20px 0 0;
+                transform: translateY(100%);
+            }
+
+            .chat-popup.active {
+                transform: translateY(0);
+            }
+
+            .chat-btn {
+                bottom: 15px;
+                right: 15px;
+                width: 55px;
+                height: 55px;
+                font-size: 26px;
+            }
+        }
+
+        .brand-section {
+            background: #fff;
+            padding: 20px 0;
+            overflow: hidden;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+
+        .brand-scroll {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .brand-track {
+            display: flex;
+            align-items: center;
+            width: max-content;
+            gap: 60px;
+            /* space between logos */
+            animation: scrollLoop 30s linear infinite;
+            will-change: transform;
+            /* improves performance */
+        }
+
+        .brand-track img {
+            height: 70px;
+            /* medium size */
+            width: auto;
+            object-fit: contain;
+            filter: grayscale(0%);
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        /* Optional hover zoom */
+        .brand-track img:hover {
+            transform: scale(1.1);
+            filter: grayscale(0%);
+        }
+
+        /* Loop scrolling animation */
+        @keyframes scrollLoop {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* Optional: pause when hover */
+        .brand-section:hover .brand-track {
+            animation-play-state: paused;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .brand-track {
+                gap: 40px;
+                animation-duration: 45s;
+                /* slower scroll for mobile */
+            }
+
+            .brand-track img {
+                height: 50px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- PAGE LOADING
+    ================================================== -->
+    <div id="preloader"></div>
+
+    <!-- MAIN WRAPPER
+    ================================================== -->
+    <div class="main-wrapper">
+
+        <!-- HEADER
+        ================================================== -->
+        <header class="header-style1 menu_area-light">
+
+            <div class="navbar-default border-bottom border-color-light-white">
+
+                <!-- start top search -->
+                <div class="top-search bg-primary">
+                    <div class="container-fluid px-lg-1-6 px-xl-2-5 px-xxl-2-9">
+                        <form class="search-form" action="search.html" method="GET" accept-charset="utf-8">
+                            <div class="input-group">
+                                <span class="input-group-addon cursor-pointer">
+                                    <button class="search-form_submit fas fa-search text-white" type="submit"></button>
+                                </span>
+                                <input type="text" class="search-form_input form-control" name="s" autocomplete="off"
+                                    placeholder="Type & hit enter...">
+                                <span class="input-group-addon close-search mt-1"><i class="fas fa-times"></i></span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- end top search -->
+
+                <div class="container-fluid px-lg-1-6 px-xl-2-5 px-xxl-2-9">
+                    <div class="row align-items-center">
+                        <div class="col-12 col-lg-12">
+                            <div class="menu_area alt-font">
+                                <nav class="navbar navbar-expand-lg navbar-light p-0">
+                                    <div class="navbar-header navbar-header-custom">
+                                        <!-- start logo -->
+                                        <a href="index.html" class="navbar-brand">
+                                            <img id="logo" src="img/logos/logo-inner.png" alt="logo"></a>
+                                        <!-- end logo -->
+                                    </div>
+
+                                    <div class="navbar-toggler bg-primary"></div>
+
+                                    <!-- start menu area -->
+                                    <ul class="navbar-nav ms-auto" id="nav" style="display: none;">
+                                        <li>
+                                            <a href="index.html">Home</a>
+                                            <!-- <ul>
+                                                <li><a href="index.html">Home 01</a></li>
+                                                <li><a href="index-02.html">Home 02</a></li>
+                                                <li><a href="index-03.html">Home 03 - Dark Menu</a></li>
+                                            </ul> -->
+                                        </li>
+                                        <li>
+                                            <a href="about.html">About</a>
+                                            <ul>
+                                                <!-- <li><a href="services.html">Our Services</a></li> -->
+                                                <li><a href="history.html">Our History</a></li>
+                                                <!-- <li><a href="pricing.html">Pricing Plan</a></li> -->
+                                                <li><a href="faq.html">FAQ's</a></li>
+                                                <li><a href="awards.html">Awards</a></li>
+                                                <li><a href="techfarming-innovation.html">Innovation</a></li>
+                                                <!-- <li>
+                                                    <a href="#">Others</a>
+                                                    <ul>
+                                                        <li><a href="404-page.html">404 Page</a></li>
+                                                         <li><a href="coming-soon.html">Coming Soon</a></li> -->
+                                                <!-- <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                                                        <li><a href="terms-conditions.html">Terms & Conditions</a></li>
+                                                    </ul>
+                                                </li>  -->
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">Services</a>
+                                            <ul>
+                                                <li><a href="Empowering Farming.html">Empowering Farming Futures</a>
+                                                </li>
+                                                <li><a href="Innovation.html">Innovation Support</a></li>
+                                                <li><a href="mentorship.html">Mentorship</a></li>
+                                                <!-- <li><a href="brand-strategy.html">Brand Strategy</a></li>
+                                                <li><a href="website-development.html">Website Development</a></li>
+                                                <li><a href="seo-optimization.html">SEO Optimization</a></li> -->
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="project.html">Project</a>
+                                            <!-- <ul>
+                                                <li>
+                                                    <a href="#">Project</a>
+                                                    <ul>
+                                                         <li><a href="portfolio-two-columns.html">2 Columns</a></li>
+                                                        <li><a href="portfolio.html">3 Columns - Standard</a></li> -->
+                                            <!-- <li><a href="portfolio-four-columns.html">4 Columns</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li><a href="portfolio-details.html">Portfolio Details</a></li>
+                                            </ul> -->
+                                        </li>
+                                        <li>
+                                            <a href="blog.html">Blog</a>
+                                            <!-- <ul>
+                                                <li>
+                                                    <a href="#">Blog Grid</a>
+                                                    <ul>
+                                                        <li><a href="blog-grid-two-columns.html">2 Columns</a></li>
+                                                        <li><a href="blog-grid-two-columns-left-sidebar.html">2 Col –
+                                                                Left Sidebar</a></li>
+                                                        <li><a href="blog-grid-two-columns-right-sidebar.html">2 Col –
+                                                                Right Sidebar</a></li>
+                                                        <li><a href="blog-grid.html">3 Columns - Standard</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li><a href="blog-list.html">Blog List</a></li>
+                                                <li><a href="blog-details.html">Blog Details</a></li>
+                                            </ul> -->
+                                        </li>
+                                        <li><a href="contact.html">Contact</a></li>
+                                    </ul>
+                                    <!-- end menu area -->
+
+                                    <!-- start attribute navigation -->
+                                    <div class="attr-nav align-items-xl-center ms-xl-auto main-font">
+                                        <ul>
+                                            <!-- <li class="search"><a href="#"><i class="fas fa-search"></i></a></li> -->
+                                            <li class="d-none d-xl-inline-block"><a href="contact.html"
+                                                    class="btn-style01 md text-white"><span class="btn-text">Free
+                                                        Quote</span></a></li>
+                                        </ul>
+                                    </div>
+                                    <!-- end attribute navigation -->
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- PAGE TITLE
+        ================================================== -->
+        <section class="page-title-section bg-img cover-background top-position1 left-overlay-secondary"
+            data-overlay-dark="8" data-background="img/banner/page-title.jpg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>Innovation<span class="font-weight-800 text-primary">Support</span></h1>
+                        <ul class="list-unstyled">
+                            <li><a href="index.html">Home</a></li>
+                            <li>Innovation Support</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="line-animated">
+                <span class="animated">&nbsp;</span>
+                <span class="animated">&nbsp;</span>
+                <span class="animated">&nbsp;</span>
+                <span class="animated">&nbsp;</span>
+                <span class="animated">&nbsp;</span>
+            </div>
+        </section>
+
+        <!-- Email MARKETING
+        ================================================== -->
+        <section>
+            <div class="container">
+                <div class="row mt-n1-9">
+
+                    <!-- service left -->
+                    <div class="col-lg-4 mt-1-9 order-2 order-lg-1">
+                        <div class="service-sidebar me-xxl-1-9">
+                            <div class="mb-2-9 widget  bg-secondary">
+                                <h5 class="mb-3 text-white">Our Services</h5>
+                                <ul class="cetegory p-0 list-unstyled mb-0">
+                                    <li class="mb-2"><a href="Empowering Farming.html">Empowering Farming Futures<i
+                                                class="ti-angle-right"></i></a></li>
+                                    <li class="active mb-2"><a href="Innovation.html">Innovation Support<i
+                                                class="ti-angle-right"></i></a></li>
+                                    <li class="mb-2"><a href="mentorship.html">Mentorship<i
+                                            class="ti-angle-right"></i></a></li>
+                                    <!-- <li class="mb-2"><a href="brand-strategy.html">Brand Strategy <i class="ti-angle-right"></i></a></li>
+                                    <li class="mb-2"><a href="website-development.html">Website Development <i class="ti-angle-right"></i></a></li>
+                                    <li><a href="seo-optimization.html">SEO Optimization <i class="ti-angle-right"></i></a></li> -->
+                                </ul>
+                            </div>
+                            <!-- <div class="widget bg-secondary">
+                                <h5 class="mb-3 text-white">Brochures</h5>
+                                <div class="widget-body">
+                                    <ul class="widget-brochure">
+                                        <li>
+                                            <a href="#" class="letter-spacing-1"><i class="far fa-file-pdf"></i>Download.pdf</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="letter-spacing-1"><i class="far fa-file-alt"></i>Download.txt</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div> -->
+                            <div class="widget bg-secondary p-0">
+                                <div class="banner-wrapper">
+                                    <img src="img/content/sidebar-img01.jpg" class="border-top-radius-10" alt="...">
+                                    <div class="p-2-2 pt-6 position-relative text-center">
+                                        <div class="icon-boxs bg-primary">
+                                            <i class="ti-headphone-alt fs-1 text-white"></i>
+                                        </div>
+                                        <h4 class="mb-3 text-white">How Can We Help?</h4>
+                                        <ul class="text-center list-unstyled mb-0">
+                                            <li class="text-white mb-2"><i
+                                                    class="fa fa-phone small text-white me-2"></i><a href="#"
+                                                    class="text-white">(+91) 7397386189</a></li>
+                                            <li class="text-white"><i
+                                                    class="fa fa-envelope-open small text-white me-2"></i><a href="#"
+                                                    class="text-white">ceojohnyesudas@gmail.com</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end service left -->
+
+                    <div class="col-lg-8 mt-1-9 order-1 order-lg-2">
+                        <div>
+                            <div class="mb-2-6 image-hover wow fadeInUp" data-wow-delay="200ms">
+                                <img src="img/service/service-details-02.jpg" alt="..." class="border-radius-10">
+                            </div>
+                            <div class="mb-2-9 wow fadeInUp" data-wow-delay="200ms">
+                                <h2 class="display-6 font-weight-600 lh-1 pb-3 mb-2">Innovation<span
+                                        class="text-primary font-weight-800">Support</span></h2>
+                                <p>Dr. John Yesudhas believes innovation is the key to transforming agriculture into a
+                                    sustainable and profitable industry. He provides end-to-end support for
+                                    agri-innovators, startups, and entrepreneurs by guiding them with technical
+                                    expertise, strategic insights, and real-world farming solutions. His leadership
+                                    helps bridge the gap between ideas and implementation, ensuring innovations reach
+                                    the ground effectively.</p>
+                                <p class="mb-0">Beyond technology, his support extends to mentoring young talents,
+                                    promoting research-driven projects, and creating opportunities for scalable
+                                    agri-business models. By fostering creativity and encouraging future-ready
+                                    solutions, he empowers innovators to make a lasting impact on farming, food
+                                    security, and environmental sustainability.</p>
+                            </div>
+                            <div class="row mt-n1-9 mb-1-9">
+                                <div class="col-6 mt-1-9 wow fadeInUp" data-wow-delay="200ms">
+                                    <div class="card card-style03 bg-transparent border-0">
+                                        <div class="card-body p-0 bg-transparent">
+                                            <div class="card-front bg-img border-radius-10 image-hover"
+                                                data-background="img/service/services-06.jpg">
+                                                <!-- <div class="card-butn"><span>Content Marketing</span></div> -->
+                                            </div>
+                                            <div class="card-back border-radius-10">
+                                                <img src="img/icons/icon-12.png" alt="..." class="mb-3 mx-auto w-60px">
+                                                <!-- <h3 class="h4 mb-3"><a href="services.html" class="text-white">Content
+                                                        Marketing</a></h3> -->
+                                                <!-- <p class="mb-0 text-white">We offer a comprehensive suite of digital
+                                                    marketing and SEO services designed to elevate your brand.</p> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 mt-1-9 wow fadeInUp" data-wow-delay="200ms">
+                                    <div class="card card-style03 bg-transparent border-0">
+                                        <div class="card-body p-0 bg-transparent">
+                                            <div class="card-front bg-img border-radius-10 image-hover"
+                                                data-background="img/service/services-07.jpg">
+                                                <!-- <div class="card-butn"><span>Email Marketing</span></div> -->
+                                            </div>
+                                            <div class="card-back border-radius-10">
+                                                <img src="img/icons/icon-12.png" alt="..." class="mb-3 mx-auto w-60px">
+                                                <!-- <h3 class="h4 mb-3"><a href="services.html" class="text-white">Email
+                                                        Marketing</a></h3> -->
+                                                <!-- <p class="mb-0 text-white">We offer a comprehensive suite of digital
+                                                    marketing and SEO services designed to elevate your brand.</p> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <div class="col-6 mt-1-9 wow fadeInUp" data-wow-delay="200ms">
+                                    <div class="card card-style03 bg-transparent border-0">
+                                        <div class="card-body p-0 bg-transparent">
+                                            <div class="card-front bg-img border-radius-10 image-hover"
+                                                data-background="img/service/services-08.jpg">
+                                                <div class="card-butn"><span>Website Design</span></div>
+                                            </div>
+                                            <div class="card-back border-radius-10">
+                                                <img src="img/icons/icon-13.png" alt="..." class="mb-3 mx-auto w-60px">
+                                                <h3 class="h4 mb-3"><a href="services.html" class="text-white">Website
+                                                        Design</a></h3>
+                                                <p class="mb-0 text-white">We offer a comprehensive suite of digital
+                                                    marketing and SEO services designed to elevate your brand.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> -->
+                                <!-- <div class="col-6 mt-1-9 wow fadeInUp" data-wow-delay="200ms">
+                                    <div class="card card-style03 bg-transparent border-0">
+                                        <div class="card-body p-0 bg-transparent">
+                                            <div class="card-front bg-img border-radius-10 image-hover"
+                                                data-background="img/service/services-09.jpg">
+                                                <div class="card-butn"><span>Brand Strategy</span></div>
+                                            </div>
+                                            <div class="card-back border-radius-10">
+                                                <img src="img/icons/icon-14.png" alt="..." class="mb-3 mx-auto w-60px">
+                                                <h3 class="h4 mb-3"><a href="brand-strategy.html"
+                                                        class="text-white">Brand Strategy</a></h3>
+                                                <p class="mb-0 text-white">We offer a comprehensive suite of digital
+                                                    marketing and SEO services designed to elevate your brand.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> -->
+                            </div>
+                            <!-- <div class="mb-1-9 wow fadeInUp" data-wow-delay="200ms">
+                                <h2 class="display-6 font-weight-600 lh-1 pb-3 mb-2">Email Marketing <span
+                                        class="text-primary font-weight-800">for Success</span></h2>
+                                <p class="mb-0">There are many variations of passages of Lorem Ipsum available, but the
+                                    majority have suffered alteration in some form, by injected humour, or randomised
+                                    words which don't look even slightly believable. If you are going to use a passage
+                                    of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the
+                                    middle of text. All the Lorem Ipsum generators on the Internet tend to repeat
+                                    predefined chunks as necessary, making this the first true generator on the
+                                    Internet.</p>
+                            </div> -->
+                            <!-- <div class="mb-1-9 wow fadeInUp" data-wow-delay="200ms">
+                                <div class="progress-text">
+                                    <div class="row mb-2">
+                                        <div class="col-6">
+                                            <h5>Business Strategy</h5>
+                                        </div>
+                                        <div class="col-6 text-end">
+                                            <h5>18%</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="custom-progress progress progress-medium height-10px">
+                                    <div class="animated custom-bar progress-bar slideInLeft bg-secondary"
+                                        style="width:18%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="10"
+                                        role="progressbar"></div>
+                                </div>
+                            </div>
+                            <div class="mb-1-9 wow fadeInUp" data-wow-delay="200ms">
+                                <div class="progress-text">
+                                    <div class="row mb-2">
+                                        <div class="col-6">
+                                            <h5>SEO Agency</h5>
+                                        </div>
+                                        <div class="col-6 text-end">
+                                            <h5>30%</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="custom-progress progress progress-medium height-10px">
+                                    <div class="animated custom-bar progress-bar slideInLeft bg-secondary"
+                                        style="width:30%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="70"
+                                        role="progressbar"></div>
+                                </div>
+                            </div>
+                            <div class="mb-1-9 wow fadeInUp" data-wow-delay="200ms">
+                                <div class="progress-text">
+                                    <div class="row mb-2">
+                                        <div class="col-6">
+                                            <h5>Marketing</h5>
+                                        </div>
+                                        <div class="col-6 text-end">
+                                            <h5>50%</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="custom-progress progress progress-medium height-10px">
+                                    <div class="animated custom-bar progress-bar slideInLeft bg-secondary"
+                                        style="width:50%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="70"
+                                        role="progressbar"></div>
+                                </div>
+                            </div>
+                            <div class="wow fadeInUp" data-wow-delay="200ms">
+                                <div class="progress-text">
+                                    <div class="row mb-2">
+                                        <div class="col-6">
+                                            <h5>Digital Marketing</h5>
+                                        </div>
+                                        <div class="col-6 text-end">
+                                            <h5>80%</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="custom-progress progress progress-medium height-10px">
+                                    <div class="animated custom-bar progress-bar slideInLeft bg-secondary"
+                                        style="width:80%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="70"
+                                        role="progressbar"></div>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section class="brand-section">
+            <div class="brand-scroll">
+                <div class="brand-track">
+                    <!-- One full set -->
+                    <img src="img/brand/brand-1.jpg" alt="Brand 1" />
+                    <img src="img/brand/brand-2.jpg" alt="Brand 2" />
+                    <img src="img/brand/brand-3.jpg" alt="Brand 3" />
+                    <img src="img/brand/brand-4.jpg" alt="Brand 4" />
+                    <img src="img/brand/brand-5.jpg" alt="Brand 5" />
+                    <img src="img/brand/brand-6.jpg" alt="Brand 6" />
+
+                    <!-- Duplicate set (for seamless looping) -->
+                    <img src="img/brand/brand-1.jpg" alt="Brand 1" />
+                    <img src="img/brand/brand-2.jpg" alt="Brand 2" />
+                    <img src="img/brand/brand-3.jpg" alt="Brand 3" />
+                    <img src="img/brand/brand-4.jpg" alt="Brand 4" />
+                    <img src="img/brand/brand-5.jpg" alt="Brand 5" />
+                    <img src="img/brand/brand-6.jpg" alt="Brand 6" />
+                </div>
+            </div>
+        </section>
+        <!-- WhatsApp Chat Button -->
+        <button class="chat-btn" id="chatBtn">
+            <i class="fa-brands fa-whatsapp"></i>
+        </button>
+
+        <!-- Popup Form -->
+        <div class="chat-popup" id="chatPopup">
+            <div class="chat-header">
+                <h4>Chat with Us</h4>
+                <button id="closeChat">&times;</button>
+            </div>
+            <div class="chat-body">
+                <input type="text" id="userName" placeholder="Your Name" required>
+                <textarea id="userMessage" rows="3" placeholder="Type your message..." required></textarea>
+                <button id="sendMsg">Send on WhatsApp</button>
+            </div>
+        </div>
+        <script>
+            const chatBtn = document.getElementById('chatBtn');
+            const chatPopup = document.getElementById('chatPopup');
+            const closeChat = document.getElementById('closeChat');
+            const sendMsg = document.getElementById('sendMsg');
+
+            // Toggle Popup
+            chatBtn.addEventListener('click', () => {
+                chatPopup.classList.toggle('active');
+            });
+
+            closeChat.addEventListener('click', () => {
+                chatPopup.classList.remove('active');
+            });
+
+            // Send WhatsApp Message
+            sendMsg.addEventListener('click', (e) => {
+                e.preventDefault();
+                const name = document.getElementById('userName').value.trim();
+                const message = document.getElementById('userMessage').value.trim();
+
+                if (!name || !message) {
+                    alert('Please enter your name and message');
+                    return;
+                }
+
+                const phoneNumber = "7397386189";
+                const text = `Hello, I'm ${name}. ${message}`;
+                const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
+
+                window.open(whatsappURL, '_blank');
+            });
+
+        </script>
+
+
+        <!-- FOOTER
+        ================================================== -->
+        <footer class="bg-secondary pt-2-9 pt-md-6 pt-xl-8">
+            <div class="container">
+                <div class="row mb-2-9 mb-md-6 mb-xl-8">
+                    <div class="col-md-8 col-xl-6">
+                        <h2 class="mb-0 display-6 font-weight-600 text-white ls-minus-2px">“A Leader Committed to
+                            Excellence <span class="font-weight-800 text-primary"> in Agriculture”</span></h2>
+                    </div>
+                </div>
+                <div class="row border-bottom border-color-light-white pb-2-9 pb-md-6 pb-xl-8 mt-n2-9">
+                    <div class="col-sm-6 col-xl-3 mt-2-9">
+                        <h3 class="font-weight-600 text-primary h5 mb-1-6 mb-md-1-9">Address</h3>
+                        <address class="mb-0 display-29 display-md-28 text-white opacity7">No 17 ,
+                            Kovalan street,
+                            <br>2nd main road,
+                            <br> Uthandi kanathur, Chennai 600119.
+                        </address>
+                    </div>
+                    <div class="col-sm-6 col-xl-3 mt-2-9">
+                        <div class="ps-sm-2-6 ps-xxl-5">
+                            <h3 class="font-weight-600 text-primary h5 mb-1-6 mb-md-1-9">Say hello</h3>
+                            <p class="email"><a href="ceojohnyesudas@gmail.com"
+                                    class="display-29 display-md-28">ceojohnyesudas@gmail.com
+                                </a></p>
+                            <p class="phone"><a href="tel:+91 7397386189"
+                                    class="display-26 display-md-25 display-xl-24">+91 7397386189</a></p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-3 mt-2-9">
+                        <div class="ps-xl-8 ps-xl-12">
+                            <h3 class="font-weight-600 text-primary h5 mb-1-6 mb-md-1-9">Social</h3>
+                            <ul class="footer-list mb-0 ps-0">
+                                <li>
+                                    <a href="https://www.facebook.com/johnyesudhass/">Facebook</a>
+                                </li>
+                                <li>
+                                    <a href="#">Twitter</a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://www.linkedin.com/in/drjohnyesudhas?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">Linkedin</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-3 mt-2-9">
+                        <div class="ps-sm-2-6 ps-xl-0">
+                            <h3 class="font-weight-600 text-primary h5 mb-1-6 mb-md-1-9">Newsletter</h3>
+                            <p class="text-white w-95">Subscribe for New Update.</p>
+                            <form class="quform newsletter-form" action="quform/newsletter-two.php" method="post"
+                                enctype="multipart/form-data" onclick="">
+
+                                <div class="quform-elements">
+                                    <div class="row">
+
+                                        <!-- Begin Text input element -->
+                                        <div class="col-md-12">
+                                            <div class="quform-element mb-0">
+                                                <div class="quform-input">
+                                                    <input class="form-control" id="email_address" type="text"
+                                                        name="email_address" placeholder="Subscribe with us">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- End Text input element -->
+
+                                        <!-- Begin Submit button -->
+                                        <div class="col-md-12">
+                                            <div class="quform-submit-inner">
+                                                <button class="btn btn-white text-white m-0" type="submit"><i
+                                                        class="fas fa-paper-plane"></i></button>
+                                            </div>
+                                            <div class="quform-loading-wrap"><span class="quform-loading"></span></div>
+                                        </div>
+                                        <!-- End Submit button -->
+                                    </div>
+
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="row py-4">
+                    <div class="col-lg-12">
+                        <p class="mb-0 text-white">&copy; <span class="current-year">&nbsp;</span>
+                            <a href="#" class="text-primary text-white-hover">All Rights by IGO Group</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- all js include start -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.min.js"></script>
+
+    <!-- popper js -->
+    <script src="js/popper.min.js"></script>
+
+    <!-- bootstrap -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- search -->
+    <script src="search/search.js"></script>
+
+    <!-- navigation -->
+    <script src="js/nav-menu.js"></script>
+
+    <!-- owl carousel -->
+    <script src="js/owl.carousel.js"></script>
+
+    <!-- jarallax -->
+    <script src="js/jarallax.min.js"></script>
+
+    <!-- jarallax video -->
+    <script src="js/jarallax-video.js"></script>
+
+    <!-- stellar js -->
+    <script src="js/jquery.stellar.min.js"></script>
+
+    <!-- waypoints js -->
+    <script src="js/waypoints.min.js"></script>
+
+    <!-- odometer js -->
+    <script src="js/odometer.min.js"></script>
+
+    <!-- countdown js -->
+    <script src="js/countdown.js"></script>
+
+    <!-- jquery.magnific-popup js -->
+    <script src="js/jquery.magnific-popup.min.js"></script>
+
+    <!-- lightgallery js -->
+    <script src="js/lightgallery-all.js"></script>
+
+    <!-- mousewheel js -->
+    <script src="js/jquery.mousewheel.min.js"></script>
+
+    <!-- wow js -->
+    <script src="js/wow.js"></script>
+
+    <!-- smoothscroll js -->
+    <script src="js/smoothscroll.js"></script>
+
+    <!-- custom scripts -->
+    <script src="js/main.js"></script>
+
+    <!-- form plugins js -->
+    <script src="quform/js/plugins.js"></script>
+
+    <!-- form scripts js -->
+    <script src="quform/js/scripts.js"></script>
+
+    <!-- all js include end -->
+
+</body>
+
+</html>

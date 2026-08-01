@@ -1,0 +1,1484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- metas -->
+    <meta charset="utf-8">
+    <meta name="author" content="Website Design Templates">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Digital Marketing & SEO Agency HTML Template">
+    <meta name="description" content="Webrik - Digital Marketing & SEO Agency HTML Template">
+
+    <!-- title  -->
+    <title>Ceo Dr.John Yesudhas</title>
+
+    <!-- Favicon for browsers -->
+    <link rel="shortcut icon" href="images/logos/favicon.ico" type="image/x-icon">
+
+    <!-- Apple Touch Icons for iOS -->
+    <link rel="apple-touch-icon" href="images/logos/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/logos/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/logos/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/logos/apple-touch-icon-180x180.png">
+
+    <!-- Optional: PWA Manifest -->
+    <link rel="manifest" href="images/site.webmanifest">
+
+    <!-- Theme Colors -->
+    <meta name="theme-color" content="#8B5E3C">
+    <meta name="msapplication-TileColor" content="#8B5E3C">
+
+    <!-- plugins -->
+    <link rel="stylesheet" href="css/plugins.css">
+
+    <!-- search css -->
+    <link rel="stylesheet" href="search/search.css">
+
+    <!-- quform css -->
+    <link rel="stylesheet" href="quform/css/base.css">
+
+    <!-- theme core css -->
+    <link href="css/styles.css" rel="stylesheet">
+
+    <!-- custom css -->
+    <link href="css/custom.css" rel="stylesheet">
+    <style>
+        /* 🎥 Centered Play Button */
+        .animated-play-btn {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 5;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .animated-play-btn:hover {
+            background: rgba(255, 255, 255, 0.5);
+            transform: translate(-50%, -50%) scale(1.1);
+            animation: pulse 1.2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+
+            50% {
+                transform: translate(-50%, -50%) scale(1.2);
+            }
+
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+
+        /* 📺 YouTube Container */
+        .youtube-box {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+        }
+
+        .youtube-box iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* ❌ Close Button */
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            font-size: 18px;
+            cursor: pointer;
+            z-index: 20;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        /* 🎬 Scroll Section Wrapper */
+        .scroll-section {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            background: #fff;
+        }
+
+        /* 🚀 Scroll Track (controls animation speed) */
+        .scroll-track {
+            display: flex;
+            width: max-content;
+            animation: scroll-left 25s linear infinite;
+        }
+
+        /* ✨ Pause animation on hover */
+        .scroll-track:hover {
+            animation-play-state: paused;
+        }
+
+        /* 🎞️ Each brand logo */
+        .scroll-item {
+            flex: 0 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            /* No gap between logos */
+        }
+
+        .scroll-item img {
+            height: 50px;
+            /* Fixed height for consistency */
+            width: auto;
+            object-fit: contain;
+            display: block;
+        }
+
+        /* 🔁 Infinite scroll animation */
+        @keyframes scroll-left {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+
+            /* Shift by half since we duplicated logos */
+        }
+
+        /* 📱 Responsive Tweaks */
+        @media (max-width: 768px) {
+            .scroll-item img {
+                height: 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .scroll-item img {
+                height: 35px;
+            }
+        }
+
+        /* 🎬 Scroll Section Wrapper */
+        .scroll-section {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            background: #fff;
+        }
+
+        /* 🚀 Scroll Track (controls animation speed) */
+        .scroll-track {
+            display: flex;
+            width: max-content;
+            animation: scroll-left 25s linear infinite;
+        }
+
+        /* ✨ Pause animation on hover */
+        .scroll-track:hover {
+            animation-play-state: paused;
+        }
+
+        /* 🎞️ Each brand logo */
+        .scroll-item {
+            flex: 0 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            /* No gap between logos */
+        }
+
+        .scroll-item img {
+            height: 50px;
+            /* Fixed height for consistency */
+            width: auto;
+            object-fit: contain;
+            display: block;
+        }
+
+        /* 🔁 Infinite scroll animation */
+        @keyframes scroll-left {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+
+            /* Shift by half since we duplicated logos */
+        }
+
+        /* 📱 Responsive Tweaks */
+        @media (max-width: 768px) {
+            .scroll-item img {
+                height: 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .scroll-item img {
+                height: 35px;
+            }
+        }
+
+        /* =========================
+           Associated Brands Section
+           ========================= */
+        .associated-brands {
+            position: relative;
+            padding: 100px 0 110px;
+            background: #0a0d0a;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        .associated-brands::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: url("img/brand/new%20brands/background%20image%20of%20brand%20.webp") center/cover no-repeat;
+            opacity: 0.35;
+            z-index: 0;
+        }
+
+        .associated-brands::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 60% 55% at 50% 0%, rgba(212, 160, 86, 0.12), transparent 70%),
+                linear-gradient(180deg, rgba(10,13,10,0.82) 0%, rgba(10,13,10,0.95) 100%);
+            z-index: 1;
+        }
+
+        .ab-container {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
+            text-align: center;
+        }
+
+        .ab-eyebrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 18px;
+            margin-bottom: 22px;
+            color: #d4a056;
+            letter-spacing: 0.28em;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .ab-eyebrow::before,
+        .ab-eyebrow::after {
+            content: "";
+            height: 1px;
+            width: 52px;
+            background: #d4a056;
+            opacity: 0.7;
+        }
+
+        .ab-title {
+            font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+            font-size: clamp(34px, 5vw, 56px);
+            font-weight: 500;
+            color: #fff;
+            margin: 0 0 18px;
+            line-height: 1.12;
+        }
+
+        .ab-subtitle {
+            color: #b5b9b5;
+            font-size: 16px;
+            line-height: 1.65;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        .ab-scroll-wrapper {
+            position: relative;
+            z-index: 2;
+            margin-top: 56px;
+        }
+
+        .ab-marquee {
+            overflow: hidden;
+            padding: 20px 0;
+            -webkit-mask-image: linear-gradient(to right, transparent 0, #000 6%, #000 94%, transparent 100%);
+            mask-image: linear-gradient(to right, transparent 0, #000 6%, #000 94%, transparent 100%);
+        }
+
+        .ab-track {
+            display: flex;
+            gap: 24px;
+            width: max-content;
+            animation: abScroll 110s linear infinite;
+            will-change: transform;
+        }
+
+        .ab-marquee:hover .ab-track {
+            animation-play-state: paused;
+        }
+
+        @keyframes abScroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+
+        .ab-card {
+            flex: 0 0 220px;
+            height: 220px;
+            background: #fff;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+        }
+
+        .ab-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 22px 42px rgba(0, 0, 0, 0.5);
+        }
+
+        .ab-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.35s ease;
+        }
+
+        .ab-card:hover img {
+            transform: scale(1.06);
+        }
+
+        .ab-card-pending {
+            padding: 22px;
+        }
+
+        .ab-card-pending {
+            background: #f7f7f3;
+            flex-direction: column;
+            gap: 14px;
+            text-align: center;
+        }
+
+        .ab-card-pending .ab-brand-name {
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: #1f2a1f;
+            line-height: 1.28;
+        }
+
+        .ab-card-pending .ab-pending-label {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 999px;
+            background: #e6e6e1;
+            color: #6a6a5f;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 768px) {
+            .associated-brands { padding: 70px 0 80px; }
+            .ab-card { flex: 0 0 180px; height: 180px; padding: 8px; }
+            .ab-card-pending { padding: 18px; }
+            .ab-track { gap: 16px; animation-duration: 140s; }
+        }
+
+        /* WhatsApp Button */
+        .chat-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 28px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+
+        .chat-btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* Popup */
+        .chat-popup {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 320px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            flex-direction: column;
+            overflow: hidden;
+            z-index: 10000;
+
+            /* Animation Defaults */
+            opacity: 0;
+            transform: translateY(30px);
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+
+        .chat-popup.active {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        /* Header */
+        .chat-header {
+            background: #25d366;
+            color: #fff;
+            padding: 12px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-header h4 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .chat-header button {
+            background: transparent;
+            border: none;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Body */
+        .chat-body {
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .chat-body input,
+        .chat-body textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+        .chat-body button {
+            background-color: #25d366;
+            border: none;
+            color: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .chat-body button:hover {
+            background-color: #1ebe57;
+        }
+
+        /* 🔹 Mobile Responsive */
+        @media (max-width: 600px) {
+            .chat-popup {
+                width: 100%;
+                height: 60%;
+                right: 0;
+                bottom: 0;
+                border-radius: 20px 20px 0 0;
+                transform: translateY(100%);
+            }
+
+            .chat-popup.active {
+                transform: translateY(0);
+            }
+
+            .chat-btn {
+                bottom: 15px;
+                right: 15px;
+                width: 55px;
+                height: 55px;
+                font-size: 26px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- PAGE LOADING
+    ================================================== -->
+    <div id="preloader"></div>
+
+    <!-- MAIN WRAPPER
+    ================================================== -->
+    <div class="main-wrapper">
+
+        <!-- HEADER
+        ================================================== -->
+        <header class="header-style1 menu_area-light">
+
+            <div class="navbar-default border-bottom border-color-light-white">
+
+                <!-- start top search -->
+                <div class="top-search bg-primary">
+                    <div class="container-fluid px-lg-1-6 px-xl-2-5 px-xxl-2-9">
+                        <form class="search-form" action="search.html" method="GET" accept-charset="utf-8">
+                            <div class="input-group">
+                                <span class="input-group-addon cursor-pointer">
+                                    <button class="search-form_submit fas fa-search text-white" type="submit"></button>
+                                </span>
+                                <input type="text" class="search-form_input form-control" name="s" autocomplete="off"
+                                    placeholder="Type & hit enter...">
+                                <span class="input-group-addon close-search mt-1"><i class="fas fa-times"></i></span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- end top search -->
+
+                <div class="container-fluid px-lg-1-6 px-xl-2-5 px-xxl-2-9">
+                    <div class="row align-items-center">
+                        <div class="col-12 col-lg-12">
+                            <div class="menu_area alt-font">
+                                <nav class="navbar navbar-expand-lg navbar-light p-0">
+                                    <div class="navbar-header navbar-header-custom">
+                                        <!-- start logo -->
+                                        <a href="index.html" class="navbar-brand">
+                                            <img id="logo" src="img/logos/logo-inner.png" alt="logo"></a>
+                                        <!-- end logo -->
+                                    </div>
+
+                                    <div class="navbar-toggler bg-primary"></div>
+
+                                    <!-- start menu area -->
+                                    <ul class="navbar-nav ms-auto" id="nav" style="display: none;">
+                                        <li>
+                                            <a href="index.html">Home</a>
+                                            <!-- <ul>
+                                                <li><a href="index.html">Home 01</a></li>
+                                                <li><a href="index-02.html">Home 02</a></li>
+                                                <li><a href="index-03.html">Home 03 - Dark Menu</a></li>
+                                            </ul> -->
+                                        </li>
+                                        <li>
+                                            <a href="about.html">About</a>
+                                            <ul>
+                                                <!-- <li><a href="services.html">Our Services</a></li> -->
+                                                <li><a href="about.html">About Us</a></li>
+                                                <li><a href="history.html">Our History</a></li>
+                                                <!-- <li><a href="pricing.html">Pricing Plan</a></li> -->
+                                                <li><a href="faq.html">FAQ's</a></li>
+                                                <li><a href="awards.html">Awards</a></li>
+                                                <li><a href="techfarming-innovation.html">Innovation</a></li>
+                                                <!-- <li>
+                                                    <a href="#">Others</a>
+                                                    <ul>
+                                                        <li><a href="404-page.html">404 Page</a></li>
+                                                        <!-- <li><a href="coming-soon.html">Coming Soon</a></li> -->
+                                                <!-- <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                                                        <li><a href="terms-conditions.html">Terms & Conditions</a></li>
+                                                    </ul>
+                                                </li>  -->
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">Services</a>
+                                            <ul>
+                                                <li><a href="Empowering Farming.html">Empowering Farming Futures</a>
+                                                </li>
+                                                <li><a href="Innovation.html">Innovation Support</a></li>
+                                                <li><a href="mentorship.html">Mentorship</a></li>
+                                                <!-- <li><a href="brand-strategy.html">Brand Strategy</a></li>
+                                                <li><a href="website-development.html">Website Development</a></li>
+                                                <li><a href="seo-optimization.html">SEO Optimization</a></li> -->
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="project.html">Project</a>
+                                            <!-- <ul>
+                                                <li>
+                                                    <a href="#">Project</a>
+                                                    <ul>
+                                                        <!-- <li><a href="portfolio-two-columns.html">2 Columns</a></li>
+                                                        <li><a href="portfolio.html">3 Columns - Standard</a></li> -->
+                                            <!-- <li><a href="portfolio-four-columns.html">4 Columns</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li><a href="portfolio-details.html">Portfolio Details</a></li>
+                                            </ul> -->
+                                        </li>
+                                        <li>
+                                            <a href="blog.html">Blog</a>
+                                            <!-- <ul>
+                                                <li>
+                                                    <a href="#">Blog Grid</a>
+                                                    <ul>
+                                                        <li><a href="blog-grid-two-columns.html">2 Columns</a></li>
+                                                        <li><a href="blog-grid-two-columns-left-sidebar.html">2 Col –
+                                                                Left Sidebar</a></li>
+                                                        <li><a href="blog-grid-two-columns-right-sidebar.html">2 Col –
+                                                                Right Sidebar</a></li>
+                                                        <li><a href="blog-grid.html">3 Columns - Standard</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li><a href="blog-list.html">Blog List</a></li>
+                                                <li><a href="blog-details.html">Blog Details</a></li>
+                                            </ul> -->
+                                        </li>
+                                        <li><a href="contact.html">Contact</a></li>
+                                    </ul>
+                                    <!-- end menu area -->
+
+                                    <!-- start attribute navigation -->
+                                    <div class="attr-nav align-items-xl-center ms-xl-auto main-font">
+                                        <ul>
+                                            <!-- <li class="search"><a href="#"><i class="fas fa-search"></i></a></li> -->
+                                            <li class="d-none d-xl-inline-block"><a href="contact.html"
+                                                    class="btn-style01 md text-white"><span class="btn-text">Free
+                                                        Quote</span></a></li>
+                                        </ul>
+                                    </div>
+                                    <!-- end attribute navigation -->
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- BANNER
+        ================================================== -->
+        <section class="jarallax p-0 full-screen video-banner top-position1" data-jarallax data-speed="0.8"
+            data-jarallax-video="mp4:img/banner/video-img.mp4,webm:img/banner/video-img.webm,ogv:img/banner/video-img.ogv"
+            data-overlay-dark="65">
+            <div class="container pt-5 pb-2 py-sm-8 py-md-0">
+                <div class="row align-items-center min-vh-100 justify-content-center">
+                    <div class="col-xl-10 col-xxl-9 text-center">
+                        <div class="text-center">
+                            <div class="section-title01 center white mb-2-9 wow fadeInUp" data-wow-delay="100ms">
+                                <h6 class="display-1 font-weight-600 lh-1 pb-3 mb-0 text-white ls-minus-2px">
+                                    Dr. John Yesudhas – <span class="text-primary font-weight-800">CEO </span>IGO Group
+                                    <br>
+                                    <span class="text-primary font-weight-800">
+                                        Tech Farming Scientist
+                                    </span>
+                                </h6>
+                            </div>
+
+                            <a href="contact.html" class="btn-style01 white primary-hover wow fadeInUp"
+                                data-wow-delay="200ms"><span class="btn-text">Get Started</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="line-animated">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </section>
+
+        <!-- ABOUT US
+        ================================================== -->
+        <section class="about-style01">
+            <div class="container">
+                <div class="row align-items-end mt-n1-9">
+                    <div class="col-lg-5 mt-1-9 wow fadeInLeft" data-wow-delay="100ms">
+                        <div class="section-title01 mb-1-9 mb-xl-2-9">
+                            <!-- <span class="text-secondary sub-title">About </span> -->
+                            <h2 class="display-5 font-weight-600 lh-1 pb-3 mb-0 ls-minus-2px">About
+                                <span class="text-primary font-weight-800">Dr. John Yesudhas </span>
+                            </h2>
+                        </div>
+                        <div class="image-hover">
+                            <img src="img/content/about-01.jpg" alt="..." class="border-radius-10">
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4 mt-1-9 wow fadeInUp" data-wow-delay="200ms">
+                        <div class="pe-md-2-6 px-lg-1-9 px-xl-2-6 px-xxl-6 mb-xl-2-9 mb-xxl-10">
+                            <!-- <div class="about-circle rotating d-none d-md-block">
+                                <svg viewBox="0 0 200 200">
+                                    <path id="textPath" d="M 85,0 A 85,85 0 0 1 -85,0 A 85,85 0 0 1 85,0"
+                                        transform="translate(100,100)" fill="none" stroke-width="0"></path>
+                                    <g font-size="22.8px">
+                                        <text text-anchor="start">
+                                            <textPath class="coloring" xlink:href="#textPath" startOffset="0%">Cowork
+                                                Creating spaces that inspire You &amp; Business.</textPath>
+                                        </text>
+                                    </g>
+                                </svg>
+                                <div class="about-icon">
+                                    <img src="img/icons/icon-03.png" alt="..." class="w-40px">
+                                </div>
+                            </div> -->
+                            <div class="about-content">
+                                <!-- <h3 class="mb-3">SINCE 2006</h3> -->
+                                <p class="display-27 mb-1-6 font-weight-600" style="font-size: 18px;">Dr. John Yesudhas,
+                                    CEO and Founder of IGO Agritech Farms, is a Tech Farming Scientist and innovative
+                                    leader in India’s agritech sector. He is known for merging technology with
+                                    sustainable farming, shaping modern agriculture while mentoring the next generation
+                                    of agripreneurs.</p>
+                                <a href="about.html" class="btn-style01"><span class="btn-text">Read More</span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3 mt-1-9 wow fadeInRight" data-wow-delay="300ms">
+                        <div class="about-counter">
+                            <div class="about-year flex-shrink-0 pe-xxl-4">
+                                <div class="odometer" data-count="10">0</div>
+                            </div>
+                            <div class="flex-grow-1">
+                                <div class="font-weight-800 text-secondary display-23 lh-1">Years of <br> <span
+                                        class="d-block font-weight-600">Pro Experiences</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="about-profile image-hover">
+                            <img src="img/content/about-02.jpg" alt="...">
+                            <div class="about-details">
+                                <h5>Dr.John Yesudhas</h5>
+                                <p>CEO of IGO Group</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ANIMATION LINE
+        ================================================== -->
+
+
+        <!-- SERVICES
+        ================================================== -->
+        <section class="services-style01 bg-secondary ptb-120">
+            <div class="container">
+                <div class="section-title01 white center text-center mb-2-9">
+                    <span class="text-white sub-title">Services</span>
+                    <h2 class="display-5 font-weight-600 lh-1 pb-3 mb-0 text-white w-xl-40 mx-auto ls-minus-2px">
+                        OUR<span class="text-primary font-weight-800"> EXPERTISE</span></h2>
+                </div>
+                <div class="row align-items-center mt-n1-9">
+                    <div class="col-lg-7 mt-1-9">
+                        <div class="pe-lg-1-9 pe-xl-2-9 pe-xxl-6">
+                            <div class="img-group">
+                                <div class="services-img image-hover">
+                                    <div><img src="img/service/services-01.jpg" alt="" class="border-radius-10"></div>
+                                </div>
+                                <div class="services-img image-hover">
+                                    <div><img src="img/service/services-02.jpg" alt="" class="border-radius-10"></div>
+                                </div>
+                                <div class="services-img image-hover">
+                                    <div><img src="img/service/services-03.jpg" alt="" class="border-radius-10"></div>
+                                </div>
+                                <div class="services-img image-hover active">
+                                    <div><img src="img/service/services-04.jpg" alt="" class="border-radius-10"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 mt-1-9">
+                        <div class="services-content">
+                            <a href="Empowering Farming.html" class="item">
+                                <div class="services-item">
+                                    <span>01</span>
+                                    <h4>Empowering Farming Futures</h4>
+                                </div>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                            <a href="Innovation.html" class="item">
+                                <div class="services-item">
+                                    <span>02</span>
+                                    <h4>Innovation Support</h4>
+                                </div>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                            <a href="mentorship.html" class="item">
+                                <div class="services-item">
+                                    <span>03</span>
+                                    <h4>Mentorship</h4>
+                                </div>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                            <!-- <a href="brand-strategy.html" class="item active">
+                                <div class="services-item">
+                                    <span>04</span>
+                                    <h4>Brand Strategy</h4>
+                                </div>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CLIENT
+        ================================================== -->
+        <!-- <section class="p-0">
+            <div class="container-fluid p-0">
+                <div class="row g-0">
+                    <div class="col-6 col-md-4 col-xl-2 text-center wow fadeInRight" data-wow-delay="200ms">
+                        <div class="position-relative client-line border-bottom border-end py-3 py-md-4 py-xl-5">
+                            <img src="img/client/client-01.png" alt="..." title="...">
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-xl-2 text-center wow fadeInRight" data-wow-delay="350ms">
+                        <div class="position-relative client-line border-bottom border-md-end py-3 py-md-4 py-xl-5">
+                            <img src="img/client/client-02.png" alt="..." title="...">
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-xl-2 text-center wow fadeInRight" data-wow-delay="500ms">
+                        <div
+                            class="position-relative client-line border-bottom border-end border-md-end-0 border-xl-end py-3 py-md-4 py-xl-5">
+                            <img src="img/client/client-03.png" alt="..." title="...">
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-xl-2 text-center wow fadeInRight" data-wow-delay="650ms">
+                        <div class="position-relative client-line border-bottom border-md-end py-3 py-md-4 py-xl-5">
+                            <img src="img/client/client-04.png" alt="..." title="...">
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-xl-2 text-center wow fadeInRight" data-wow-delay="800ms">
+                        <div class="position-relative client-line border-bottom border-end py-3 py-md-4 py-xl-5">
+                            <img src="img/client/client-05.png" alt="..." title="...">
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-xl-2 text-center wow fadeInRight" data-wow-delay="950ms">
+                        <div class="position-relative client-line border-bottom py-3 py-md-4 py-xl-5">
+                            <img src="img/client/client-06.png" alt="..." title="...">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+
+        <!-- PORTFOLIO
+        ================================================== -->
+        <section class="portfolio-style01 oveflow-hidden z-index-9 bg-transparent">
+            <div class="container">
+                <div class="section-title01 center text-center mb-1-9">
+                    <span class="text-secondary sub-title">OUR PROJECTS</span>
+                    <h2 class="display-5 font-weight-600 lh-1 pb-3 ls-minus-2px">LATEST KEY
+                        <span class="text-primary font-weight-800"> INNOVATIVE PROJECTS</span>
+                    </h2>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="owl-carousel portfolio-carousel-one"
+                    data-owl='{ "loop": true, "autoplay": true, "autoplayTimeout": 5000, "responsiveClass": true, "smartSpeed": 900, "dots": false, "nav": false, "margin": 30, "responsive": { "0": { "items": 1 }, "576": { "items": 2 }, "768": { "items": 2 }, "991": { "items": 3 }, "1400": { "items": 4 } } }'>
+                    <div class="">
+                        <div class="portfolio-box">
+                            <div class="portfolio-img">
+                                <img src="img/portfolio/portfolio-01.jpg" alt="...">
+                            </div>
+                            <div class="portfolio-text">
+                                <i class="fa fa-long-arrow-alt-right"></i></a>
+                                <span>IGO Group</span>
+                                <h4>Polyhouse Projects</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="portfolio-box">
+                            <div class="portfolio-img">
+                                <img src="img/portfolio/portfolio-02.jpg" alt="...">
+                            </div>
+                            <div class="portfolio-text">
+                                <i class="fa fa-long-arrow-alt-right"></i></a>
+                                <span>IGO Group</span>
+                                <h4>Joint Venture Projects
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="portfolio-box">
+                            <div class="portfolio-img">
+                                <img src="img/portfolio/portfolio-03.jpg" alt="...">
+                            </div>
+                            <div class="portfolio-text">
+                                <i class="fa fa-long-arrow-alt-right"></i></a>
+                                <span>IGO Group</span>
+                                <h4>Mushroom Farming Projects
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="portfolio-box">
+                            <div class="portfolio-img">
+                                <img src="img/portfolio/portfolio-04.jpg" alt="...">
+                            </div>
+                            <div class="portfolio-text">
+                                <i class="fa fa-long-arrow-alt-right"></i></a>
+                                <span>IGO Group</span>
+                                <h4> Nursery Gardening Project
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="portfolio-box">
+                            <div class="portfolio-img">
+                                <img src="img/portfolio/portfolio-05.jpg" alt="...">
+                            </div>
+                            <div class="portfolio-text">
+                                <i class="fa fa-long-arrow-alt-right"></i></a>
+                                <span>IGO Group</span>
+                                <h4> Open Cultivation Projects</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="portfolio-box">
+                            <div class="portfolio-img">
+                                <img src="img/portfolio/portfolio-06.jpg" alt="...">
+                            </div>
+                            <div class="portfolio-text">
+                                <i class="fa fa-long-arrow-alt-right"></i></a>
+                                <span>IGO Group</span>
+                                <h4> Hydroponic Projects
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="portfolio-box">
+                            <div class="portfolio-img">
+                                <img src="img/portfolio/portfolio-07.jpg" alt="...">
+                            </div>
+                            <div class="portfolio-text">
+                                <i class="fa fa-long-arrow-alt-right"></i></a>
+                                <span>IGO Group</span>
+                                <h4> Bluberry Farming Projects
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="portfolio-box">
+                            <div class="portfolio-img">
+                                <img src="img/portfolio/portfolio-08.jpg" alt="...">
+                            </div>
+                            <div class="portfolio-text">
+                                <i class="fa fa-long-arrow-alt-right"></i></a>
+                                <span>IGO Group</span>
+                                <h4> Vennila Farming Project
+
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="portfolio-box">
+                            <div class="portfolio-img">
+                                <img src="img/portfolio/portfolio-09.jpg" alt="...">
+                            </div>
+                            <div class="portfolio-text">
+                                <i class="fa fa-long-arrow-alt-right"></i></a>
+                                <span>IGO Group</span>
+                                <h4> Saffron Farming Project
+
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="portfolio-box">
+                            <div class="portfolio-img">
+                                <img src="img/portfolio/portfolio-10.jpg" alt="...">
+                            </div>
+                            <div class="portfolio-text">
+                                <i class="fa fa-long-arrow-alt-right"></i></a>
+                                <span>IGO Group</span>
+                                <h4> Crab Farming Project
+
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- PROCESS
+        ================================================== -->
+        <section class="process-style01 pt-0 overflow-visible">
+            <div class="container">
+                <div class="row mt-n1-9">
+                    <div class="col-lg-6 mt-1-9">
+                        <div class="pe-xxl-6 sticky-top-style wow fadeInUp" data-wow-delay="100ms">
+                            <div class="section-title01 mb-1-9">
+                                <span class="text-secondary sub-title">Visionary Leadership</span>
+                                <h2 class="display-5 font-weight-600 lh-1 pb-3 mb-0 ls-minus-2px">“Author, Speaker,
+                                    Innovator
+
+                                    <span class="text-primary font-weight-800"> Leading Agriculture into the Future”
+                                    </span>
+                                </h2>
+                            </div>
+                            <p class="wow fadeInUp" data-wow-delay="200ms">Dr. John Yesudhas is a multifaceted leader
+                                shaping the future of agriculture. Author of Polyhouse Farming, TEDx speaker, and CEO of
+                                IGO Group, he pioneers precision farming, hydroponics, and polyhouse projects, turning
+                                unused lands into profitable ventures. His journey reflects innovation, mentorship, and
+                                lasting impact in agritech.</p>
+                            <a href="about.html" class="btn-style01 wow fadeInUp" data-wow-delay="300ms"><span
+                                    class="btn-text">Read More</span></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mt-1-9">
+                        <div class="process-block wow fadeInUp" data-wow-delay="100ms">
+                            <div class="process-content">
+                                <h3>step</h3>
+                                <h2>Innovation that Inspires Growth</h2>
+                                <p>Dr. John Yesudhas, CEO of IGO Group, is a TEDx speaker and author of Polyhouse
+                                    Farming. He pioneers precision farming, hydroponics, and polyhouse projects, turning
+                                    vision into profitable ventures.</p>
+                            </div>
+                            <div class="process-num">
+                                <h2>01</h2>
+                            </div>
+                        </div>
+                        <div class="process-block wow fadeInUp" data-wow-delay="200ms">
+                            <div class="process-content">
+                                <h3>step</h3>
+                                <h2>Transforming Agriculture with Purpose</h2>
+                                <p>Dr. John Yesudhas merges technology with sustainability, shaping modern farming with
+                                    innovation, mentorship, and lasting impact.</p>
+                            </div>
+                            <div class="process-num">
+                                <h2>02</h2>
+                            </div>
+                        </div>
+                        <div class="process-block wow fadeInUp" data-wow-delay="300ms">
+                            <div class="process-content">
+                                <h3>step</h3>
+                                <h2>From Vision to Impact</h2>
+                                <p>Author, speaker, innovator, and CEO, Dr. John Yesudhas drives new-age agriculture,
+                                    empowering farmers and building sustainable futures.</p>
+                            </div>
+                            <div class="process-num">
+                                <h2>03</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXTRA
+        ================================================== -->
+        <section class="bg-img cover-background parallax extra-style01 secondary-overlay" data-overlay-dark="6"
+            data-background="img/bg/bg-01.jpg">
+            <div class="container">
+                <div class="row py-md-2-9 py-lg-7 align-items-center justify-content-center">
+                    <div class="col-lg-12 wow fadeInUp" data-wow-delay="100ms">
+
+                        <!-- Video Wrapper -->
+                        <div class="story-video d-flex justify-content-center mb-1-9 mb-xl-2-9"
+                            style="position:relative; width:100%; max-width:800px; margin:0 auto;">
+
+                            <div id="videoWrapper"
+                                style="position:relative; width:100%; padding-bottom:56.25%; height:0;">
+
+                                <!-- Play Button -->
+                                <div id="playButton" class="animated-play-btn">
+                                    <span><i class="fa-solid fa-play"></i></span>
+                                </div>
+
+                                <!-- YouTube Container -->
+                                <div id="youtubeContainer" class="youtube-box">
+                                    <iframe id="youtubeVideo"
+                                        src="https://www.youtube.com/embed/Gy44COGEGD0?rel=0&enablejsapi=1"
+                                        frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen></iframe>
+
+                                    <!-- Close Button -->
+                                    <button id="closeVideo" class="close-btn">×</button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Heading -->
+                        <div class="text-center wow fadeInUp" data-wow-delay="200ms">
+                            <h2 class="display-2 font-weight-600 lh-1 mb-0 text-white w-xl-80 mx-auto ls-minus-2px">
+                                Tech Farming Scientist <span class="text-primary font-weight-800">TEDx Speaker</span>
+                            </h2>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script>
+            // Load YouTube API
+            var tag = document.createElement('script');
+            tag.src = "https://www.youtube.com/iframe_api";
+            document.body.appendChild(tag);
+
+            let player;
+            function onYouTubeIframeAPIReady() {
+                player = new YT.Player('youtubeVideo');
+            }
+
+            const playBtn = document.getElementById("playButton");
+            const youtubeContainer = document.getElementById("youtubeContainer");
+            const closeBtn = document.getElementById("closeVideo");
+
+            // ▶️ Play button click
+            playBtn.addEventListener("click", function () {
+                youtubeContainer.style.display = "block";  // show video
+                playBtn.style.display = "none";            // hide play btn
+                if (player && player.playVideo) player.playVideo();
+            });
+
+            // ❌ Close button click
+            closeBtn.addEventListener("click", function () {
+                youtubeContainer.style.display = "none";   // hide video
+                playBtn.style.display = "flex";            // show play btn
+                if (player && player.stopVideo) player.stopVideo(); // stop audio
+            });
+        </script>
+
+
+        <section class="associated-brands">
+            <div class="ab-container">
+                <div class="ab-eyebrow"><span>IGO Group of Companies</span></div>
+                <h2 class="ab-title">Our Associated Brands</h2>
+                <p class="ab-subtitle">The IGO ecosystem spans farming, food processing, financial services, and agri-education &mdash; all under one group.</p>
+            </div>
+            <div class="ab-scroll-wrapper">
+                <div class="ab-marquee">
+                    <div class="ab-track">
+                        <!-- Set 1 -->
+                        <div class="ab-card"><img src="img/brand/new%20brands/igo%20agritech%20farms%20.webp" alt="IGO Agritech Farms"></div>
+                        <div class="ab-card ab-card-pending"><span class="ab-brand-name">IGO Farm Land Estates</span><span class="ab-pending-label">On Process</span></div>
+                        <div class="ab-card ab-card-pending"><span class="ab-brand-name">IGO Farm Factories</span><span class="ab-pending-label">On Process</span></div>
+                        <div class="ab-card ab-card-pending"><span class="ab-brand-name">IGO Farm Automation</span><span class="ab-pending-label">On Process</span></div>
+                        <div class="ab-card"><img src="img/brand/new%20brands/igo%20nursery%20.webp" alt="IGO Nursery"></div>
+                        <div class="ab-card"><img src="img/brand/new%20brands/farmers%20factory%20.webp" alt="Farmers Factory"></div>
+                        <div class="ab-card"><img src="img/brand/new%20brands/igo%20agri%20mart%20.webp" alt="IGO Agrimart"></div>
+                        <div class="ab-card"><img src="img/brand/new%20brands/igo%20mart%20.webp" alt="IGO Mart"></div>
+                        <div class="ab-card"><img src="img/brand/new%20brands/igo%20farm%20gate%20mandi.webp" alt="IGO Farmgate Mandi"></div>
+                        <div class="ab-card ab-card-pending"><span class="ab-brand-name">IGO Imports &amp; Exports</span><span class="ab-pending-label">On Process</span></div>
+                        <div class="ab-card"><img src="img/brand/new%20brands/palm%20cafe%20.webp" alt="Palm Cafe"></div>
+                        <div class="ab-card"><img src="img/brand/new%20brands/proten%20cuts%20.webp" alt="Protein Cuts"></div>
+                        <div class="ab-card ab-card-pending"><span class="ab-brand-name">IGO Organic Pharmacy</span><span class="ab-pending-label">On Process</span></div>
+                        <div class="ab-card ab-card-pending"><span class="ab-brand-name">IGO Natural Cosmetics</span><span class="ab-pending-label">On Process</span></div>
+                        <div class="ab-card ab-card-pending"><span class="ab-brand-name">India Green</span><span class="ab-pending-label">On Process</span></div>
+                        <div class="ab-card ab-card-pending"><span class="ab-brand-name">India Green Organics</span><span class="ab-pending-label">On Process</span></div>
+                        <div class="ab-card"><img src="img/brand/new%20brands/igo%20fintech%20.webp" alt="IGO Fintech"></div>
+                        <div class="ab-card ab-card-pending"><span class="ab-brand-name">IGO Farm Loans, Subsidy &amp; Grants</span><span class="ab-pending-label">On Process</span></div>
+                        <div class="ab-card ab-card-pending"><span class="ab-brand-name">IGO Wealth Management Services</span><span class="ab-pending-label">On Process</span></div>
+                        <div class="ab-card ab-card-pending"><span class="ab-brand-name">IGO Franchise</span><span class="ab-pending-label">On Process</span></div>
+                        <div class="ab-card ab-card-pending"><span class="ab-brand-name">IGO Training Courses</span><span class="ab-pending-label">On Process</span></div>
+                        <div class="ab-card"><img src="img/brand/new%20brands/tech%20farming%20export%20.webp" alt="Tech Farming Expert"></div>
+                        <div class="ab-card"><img src="img/brand/new%20brands/igo-foundation.webp" alt="IGO Tech Farming Scientists Foundation"></div>
+                        <div class="ab-card"><img src="img/brand/new%20brands/valluvam%20.webp" alt="Valluvam"></div>
+                        <div class="ab-card ab-card-pending"><span class="ab-brand-name">IGO Green Energy</span><span class="ab-pending-label">On Process</span></div>
+                        <div class="ab-card ab-card-pending"><span class="ab-brand-name">IGO Crop Care</span><span class="ab-pending-label">On Process</span></div>
+                        <!-- Set 2 (duplicate for seamless loop) -->
+                        <div class="ab-card" aria-hidden="true"><img src="img/brand/new%20brands/igo%20agritech%20farms%20.webp" alt=""></div>
+                        <div class="ab-card ab-card-pending" aria-hidden="true"><span class="ab-brand-name">IGO Farm Land Estates</span><span class="ab-pending-label">On Process</span></div>
+                        <div class="ab-card ab-card-pending" aria-hidden="true"><span class="ab-brand-name">IGO Farm Factories</span><span class="ab-pending-label">On Process</span></div>
+                        <div class="ab-card ab-card-pending" aria-hidden="true"><span class="ab-brand-name">IGO Farm Automation</span><span class="ab-pending-label">On Process</span></div>
+                        <div class="ab-card" aria-hidden="true"><img src="img/brand/new%20brands/igo%20nursery%20.webp" alt=""></div>
+                        <div class="ab-card" aria-hidden="true"><img src="img/brand/new%20brands/farmers%20factory%20.webp" alt=""></div>
+                        <div class="ab-card" aria-hidden="true"><img src="img/brand/new%20brands/igo%20agri%20mart%20.webp" alt=""></div>
+                        <div class="ab-card" aria-hidden="true"><img src="img/brand/new%20brands/igo%20mart%20.webp" alt=""></div>
+                        <div class="ab-card" aria-hidden="true"><img src="img/brand/new%20brands/igo%20farm%20gate%20mandi.webp" alt=""></div>
+                        <div class="ab-card ab-card-pending" aria-hidden="true"><span class="ab-brand-name">IGO Imports &amp; Exports</span><span class="ab-pending-label">On Process</span></div>
+                        <div class="ab-card" aria-hidden="true"><img src="img/brand/new%20brands/palm%20cafe%20.webp" alt=""></div>
+                        <div class="ab-card" aria-hidden="true"><img src="img/brand/new%20brands/proten%20cuts%20.webp" alt=""></div>
+                        <div class="ab-card ab-card-pending" aria-hidden="true"><span class="ab-brand-name">IGO Organic Pharmacy</span><span class="ab-pending-label">On Process</span></div>
+                        <div class="ab-card ab-card-pending" aria-hidden="true"><span class="ab-brand-name">IGO Natural Cosmetics</span><span class="ab-pending-label">On Process</span></div>
+                        <div class="ab-card ab-card-pending" aria-hidden="true"><span class="ab-brand-name">India Green</span><span class="ab-pending-label">On Process</span></div>
+                        <div class="ab-card ab-card-pending" aria-hidden="true"><span class="ab-brand-name">India Green Organics</span><span class="ab-pending-label">On Process</span></div>
+                        <div class="ab-card" aria-hidden="true"><img src="img/brand/new%20brands/igo%20fintech%20.webp" alt=""></div>
+                        <div class="ab-card ab-card-pending" aria-hidden="true"><span class="ab-brand-name">IGO Farm Loans, Subsidy &amp; Grants</span><span class="ab-pending-label">On Process</span></div>
+                        <div class="ab-card ab-card-pending" aria-hidden="true"><span class="ab-brand-name">IGO Wealth Management Services</span><span class="ab-pending-label">On Process</span></div>
+                        <div class="ab-card ab-card-pending" aria-hidden="true"><span class="ab-brand-name">IGO Franchise</span><span class="ab-pending-label">On Process</span></div>
+                        <div class="ab-card ab-card-pending" aria-hidden="true"><span class="ab-brand-name">IGO Training Courses</span><span class="ab-pending-label">On Process</span></div>
+                        <div class="ab-card" aria-hidden="true"><img src="img/brand/new%20brands/tech%20farming%20export%20.webp" alt=""></div>
+                        <div class="ab-card" aria-hidden="true"><img src="img/brand/new%20brands/igo-foundation.webp" alt=""></div>
+                        <div class="ab-card" aria-hidden="true"><img src="img/brand/new%20brands/valluvam%20.webp" alt=""></div>
+                        <div class="ab-card ab-card-pending" aria-hidden="true"><span class="ab-brand-name">IGO Green Energy</span><span class="ab-pending-label">On Process</span></div>
+                        <div class="ab-card ab-card-pending" aria-hidden="true"><span class="ab-brand-name">IGO Crop Care</span><span class="ab-pending-label">On Process</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WhatsApp Chat Button -->
+        <button class="chat-btn" id="chatBtn">
+            <i class="fa-brands fa-whatsapp"></i>
+        </button>
+
+        <!-- Popup Form -->
+        <div class="chat-popup" id="chatPopup">
+            <div class="chat-header">
+                <h4>Chat with Us</h4>
+                <button id="closeChat">&times;</button>
+            </div>
+            <div class="chat-body">
+                <input type="text" id="userName" placeholder="Your Name" required>
+                <textarea id="userMessage" rows="3" placeholder="Type your message..." required></textarea>
+                <button id="sendMsg">Send on WhatsApp</button>
+            </div>
+        </div>
+        <script>
+            const chatBtn = document.getElementById('chatBtn');
+            const chatPopup = document.getElementById('chatPopup');
+            const closeChat = document.getElementById('closeChat');
+            const sendMsg = document.getElementById('sendMsg');
+
+            // Toggle Popup
+            chatBtn.addEventListener('click', () => {
+                chatPopup.classList.toggle('active');
+            });
+
+            closeChat.addEventListener('click', () => {
+                chatPopup.classList.remove('active');
+            });
+
+            // Send WhatsApp Message
+            sendMsg.addEventListener('click', (e) => {
+                e.preventDefault();
+                const name = document.getElementById('userName').value.trim();
+                const message = document.getElementById('userMessage').value.trim();
+
+                if (!name || !message) {
+                    alert('Please enter your name and message');
+                    return;
+                }
+
+                const phoneNumber = "7397386189";
+                const text = `Hello, I'm ${name}. ${message}`;
+                const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
+
+                window.open(whatsappURL, '_blank');
+            });
+
+        </script>
+
+        <!-- FOOTER
+        ================================================== -->
+        <footer class="bg-secondary pt-2-9 pt-md-6 pt-xl-8">
+            <div class="container">
+                <div class="row mb-2-9 mb-md-6 mb-xl-8">
+                    <div class="col-md-8 col-xl-6">
+                        <h2 class="mb-0 display-6 font-weight-600 text-white ls-minus-2px">“A Leader Committed to
+                            Excellence <span class="font-weight-800 text-primary"> in Agriculture”</span></h2>
+                    </div>
+                </div>
+                <div class="row border-bottom border-color-light-white pb-2-9 pb-md-6 pb-xl-8 mt-n2-9">
+                    <div class="col-sm-6 col-xl-3 mt-2-9">
+                        <h3 class="font-weight-600 text-primary h5 mb-1-6 mb-md-1-9">Address</h3>
+                        <address class="mb-0 display-29 display-md-28 text-white opacity7">No 17 ,
+                            Kovalan street,
+                            <br>2nd main road,
+                            <br> Uthandi kanathur, Chennai 600119.
+                        </address>
+                    </div>
+                    <div class="col-sm-6 col-xl-3 mt-2-9">
+                        <div class="ps-sm-2-6 ps-xxl-5">
+                            <h3 class="font-weight-600 text-primary h5 mb-1-6 mb-md-1-9">Say hello</h3>
+                            <p class="email"><a href="ceojohnyesudas@gmail.com"
+                                    class="display-29 display-md-28">ceojohnyesudas@gmail.com
+                                </a></p>
+                            <p class="phone"><a href="tel:+91 7397386189"
+                                    class="display-26 display-md-25 display-xl-24">+91 7397386189</a></p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-3 mt-2-9">
+                        <div class="ps-xl-8 ps-xl-12">
+                            <h3 class="font-weight-600 text-primary h5 mb-1-6 mb-md-1-9">Social</h3>
+                            <ul class="footer-list mb-0 ps-0">
+                                <li>
+                                    <a href="https://www.facebook.com/johnyesudhass/">Facebook</a>
+                                </li>
+                                <li>
+                                    <a href="#">Twitter</a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://www.linkedin.com/in/drjohnyesudhas?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">Linkedin</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-3 mt-2-9">
+                        <div class="ps-sm-2-6 ps-xl-0">
+                            <h3 class="font-weight-600 text-primary h5 mb-1-6 mb-md-1-9">Newsletter</h3>
+                            <p class="text-white w-95">Subscribe for New Update.</p>
+                            <form class="quform newsletter-form" action="quform/newsletter-two.php" method="post"
+                                enctype="multipart/form-data" onclick="">
+
+                                <div class="quform-elements">
+                                    <div class="row">
+
+                                        <!-- Begin Text input element -->
+                                        <div class="col-md-12">
+                                            <div class="quform-element mb-0">
+                                                <div class="quform-input">
+                                                    <input class="form-control" id="email_address" type="text"
+                                                        name="email_address" placeholder="Subscribe with us">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- End Text input element -->
+
+                                        <!-- Begin Submit button -->
+                                        <div class="col-md-12">
+                                            <div class="quform-submit-inner">
+                                                <button class="btn btn-white text-white m-0" type="submit"><i
+                                                        class="fas fa-paper-plane"></i></button>
+                                            </div>
+                                            <div class="quform-loading-wrap"><span class="quform-loading"></span></div>
+                                        </div>
+                                        <!-- End Submit button -->
+                                    </div>
+
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="row py-4">
+                    <div class="col-lg-12">
+                        <p class="mb-0 text-white">&copy; <span class="current-year">&nbsp;</span>
+                            <a href="#" class="text-primary text-white-hover">All Rights by IGO Group</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- all js include start -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.min.js"></script>
+
+    <!-- popper js -->
+    <script src="js/popper.min.js"></script>
+
+    <!-- bootstrap -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- search -->
+    <script src="search/search.js"></script>
+
+    <!-- navigation -->
+    <script src="js/nav-menu.js"></script>
+
+    <!-- owl carousel -->
+    <script src="js/owl.carousel.js"></script>
+
+    <!-- jarallax -->
+    <script src="js/jarallax.min.js"></script>
+
+    <!-- jarallax video -->
+    <script src="js/jarallax-video.js"></script>
+
+    <!-- stellar js -->
+    <script src="js/jquery.stellar.min.js"></script>
+
+    <!-- waypoints js -->
+    <script src="js/waypoints.min.js"></script>
+
+    <!-- odometer js -->
+    <script src="js/odometer.min.js"></script>
+
+    <!-- countdown js -->
+    <script src="js/countdown.js"></script>
+
+    <!-- jquery.magnific-popup js -->
+    <script src="js/jquery.magnific-popup.min.js"></script>
+
+    <!-- lightgallery js -->
+    <script src="js/lightgallery-all.js"></script>
+
+    <!-- mousewheel js -->
+    <script src="js/jquery.mousewheel.min.js"></script>
+
+    <!-- wow js -->
+    <script src="js/wow.js"></script>
+
+    <!-- smoothscroll js -->
+    <script src="js/smoothscroll.js"></script>
+
+    <!-- custom scripts -->
+    <script src="js/main.js"></script>
+
+    <!-- form plugins js -->
+    <script src="quform/js/plugins.js"></script>
+
+    <!-- form scripts js -->
+    <script src="quform/js/scripts.js"></script>
+
+    <!-- all js include end -->
+
+</body>
+
+</html>
