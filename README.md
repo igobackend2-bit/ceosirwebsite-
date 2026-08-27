@@ -1,12 +1,36 @@
+# Ceo Dr. John Yesudhas — Profile Website
+
+Static personal/corporate profile site for **Dr. John Yesudhas**, built on top of the "Webrik" HTML template (digital marketing/agency template, repurposed here as a CEO profile and personal-brand site). Plain HTML/CSS/JS with a PHP contact form backend — no build step, no framework, no package manager.
+
+## Structure
+
+\```
+ceoprofile/
+├── ceo/              The actual website — deploy this folder
+│   ├── index.html, about.html, services.html, project.html, blog.html,
+│   │   contact.html, faq.html, awards.html, history.html, mentorship.html,
+│   │   Innovation.html, Empowering Farming.html, techfarming-innovation.html,
+│   │   404-page.html
+│   ├── css/          styles.css, custom.css, plugins.css + vendor plugin CSS
+│   ├── js/            jQuery, Bootstrap, WOW.js, Owl Carousel, jarallax,
+│   │                   Magnific Popup, Odometer, and main.js / nav-menu.js
+│   ├── fonts/         Icon fonts
+│   ├── img/            avatars, awards, banner, bg, blog, brand, client,
+│   │                    content, icons, logos, portfolio, service, team
+│   ├── search/         Client-side search assets
+│   └── quform/         PHP contact form handler (see below)
+└── documentation/     Original "Webrik" theme documentation — reference only,
+                        not part of the deployed site
+\```
 
 ## Running it locally
 
 This is a static site with a PHP form handler, so it needs a PHP-capable server rather than a plain static file server:
 
-```bash
+\```bash
 cd ceoprofile/ceo
 php -S localhost:8000
-```
+\```
 
 Then open `http://localhost:8000`.
 
@@ -14,11 +38,10 @@ Then open `http://localhost:8000`.
 
 Ships as a Docker image (`Dockerfile`) built on `nginx:alpine`: it copies `ceoprofile/ceo/` straight into `/usr/share/nginx/html` and serves it with the bundled `nginx.conf`, which does a plain SPA-style `try_files $uri $uri/ /index.html` fallback and listens on port 80.
 
-```bash
-
+\```bash
 docker build -t ceo-profile-site .
 docker run -p 8080:80 ceo-profile-site
-```
+\```
 
 **Note:** nginx alone cannot execute the PHP contact form (`quform/contact.php`) — this Docker setup serves static assets only. To make the contact form work, this needs to run behind (or alongside) a PHP-FPM process, or the target host needs to be a standard PHP hosting environment.
 
