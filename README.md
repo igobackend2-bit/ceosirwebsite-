@@ -15,6 +15,7 @@ Then open `http://localhost:8000`.
 Ships as a Docker image (`Dockerfile`) built on `nginx:alpine`: it copies `ceoprofile/ceo/` straight into `/usr/share/nginx/html` and serves it with the bundled `nginx.conf`, which does a plain SPA-style `try_files $uri $uri/ /index.html` fallback and listens on port 80.
 
 ```bash
+
 docker build -t ceo-profile-site .
 docker run -p 8080:80 ceo-profile-site
 ```
