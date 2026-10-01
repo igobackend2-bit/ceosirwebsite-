@@ -18,7 +18,7 @@
     <link rel="shortcut icon" href="img/logos/favicon.jpg">
     <link rel="apple-touch-icon" href="img/logos/apple-touch-icon-57x57.jpg">
     <link rel="apple-touch-icon" sizes="72x72" href="img/logos/apple-touch-icon-72x72.jpg">
-    <link rel="apple-touch-icon" sizes="114x114" href="img/logos/apple-touch-icon-114x114.jp">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/logos/apple-touch-icon-114x114.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <!-- plugins -->
@@ -232,6 +232,30 @@
             .brand-track img {
                 height: 50px;
             }
+        }
+
+        /* COUNTER FIX: number sits above its label so wide numbers never overlap the text */
+        .counter-style01 .counter-bg {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .counter-style01 .counter-bg .display-3 {
+            font-size: clamp(2.5rem, 4.2vw, 4.5rem);
+            white-space: nowrap;
+        }
+
+        .counter-style01 .counter-bg .odometer {
+            display: inline-block;
+            white-space: nowrap;
+        }
+
+        .counter-style01 .counter-title {
+            white-space: normal;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
     </style>
 
@@ -457,11 +481,13 @@
         <section class="bg-secondary counter-style01 py-9">
             <div class="container-fluid px-lg-8 px-xxl-20">
                 <div class="row mt-n1-9">
+
+                    <!-- Projects Completed -->
                     <div class="col-sm-6 col-xl-3 mt-1-9 wow fadeInUp" data-wow-delay="200ms">
                         <div class="counter-bg">
                             <div class="flex-shrink-0">
                                 <div class="text-primary lh-1 font-weight-500 d-inline-block display-3">
-<div class="odometer font-weight-600" data-count="15000">0</div>+
+                                    <div class="odometer font-weight-600" data-count="15000">0</div>+
                                 </div>
                             </div>
                             <div class="flex-grow-1">
@@ -471,11 +497,13 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Customers -->
                     <div class="col-sm-6 col-xl-3 mt-1-9 wow fadeInUp" data-wow-delay="300ms">
                         <div class="counter-bg">
                             <div class="flex-shrink-0">
                                 <div class="text-primary lh-1 font-weight-500 d-inline-block display-3">
-<div class="odometer font-weight-600" data-count="15000">0</div>+
+                                    <div class="odometer font-weight-600" data-count="15000">0</div>+
                                 </div>
                             </div>
                             <div class="flex-grow-1">
@@ -485,11 +513,13 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Dedicated Staff -->
                     <div class="col-sm-6 col-xl-3 mt-1-9 wow fadeInUp" data-wow-delay="400ms">
                         <div class="counter-bg">
                             <div class="flex-shrink-0">
                                 <div class="text-primary lh-1 font-weight-500 d-inline-block display-3">
-<div class="odometer font-weight-600" data-count="500">0</div>+
+                                    <div class="odometer font-weight-600" data-count="500">0</div>+
                                 </div>
                             </div>
                             <div class="flex-grow-1">
@@ -499,19 +529,23 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Honorable Awards Received -->
                     <div class="col-sm-6 col-xl-3 mt-1-9 wow fadeInUp" data-wow-delay="500ms">
                         <div class="counter-bg">
                             <div class="flex-shrink-0">
                                 <div class="text-primary lh-1 font-weight-500 d-inline-block display-3">
-                                    <div class="odometer font-weight-600" data-count="15">1</div>
+                                    <div class="odometer font-weight-600" data-count="15">0</div>
                                 </div>
                             </div>
                             <div class="flex-grow-1">
                                 <div class="counter-title">
-<div class="odometer font-weight-600" data-count="15">0</div>                                </div>
+                                    <span class="text-white">Honorable Awards Received</span>
+                                </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
